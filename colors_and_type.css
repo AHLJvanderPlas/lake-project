@@ -1,0 +1,206 @@
+/* ──────────────────────────────────────────────────────────────
+   Lake-Project · Design Tokens · v2 "Night Station"
+   Futuristic editorial. Dark canvas, luminous cyan, mono-forward.
+   ────────────────────────────────────────────────────────────── */
+
+/* Fonts ───────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500;600&family=Michroma&display=swap");
+
+:root {
+  /* ── Type families ─────────────────────────────────────────── */
+  /* Geist is the primary voice. Mono is heavily used as decoration. */
+  /* The serif survives ONLY for one-word italic accents — used sparingly. */
+  --font-sans:    "Geist", "Söhne", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Geist Mono", "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-display: "Geist", "Söhne", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-italic-accent: "Instrument Serif", "Tiempos Headline", Georgia, serif;
+  /* Logo font: Eurostile → Michroma (closest free analogue). */
+  /* If you have a real Eurostile licence, drop the .woff2 in fonts/ and update --font-logo. */
+  --font-logo:    "Eurostile", "Eurostile Extended", "Michroma", "Saira", "Audiowide", sans-serif;
+
+  /* ── Type scale ────────────────────────────────────────────── */
+  /* Display uses light weights (200/300) at large sizes — the "luminous" look */
+  --t-display-xl-size:  clamp(64px, 9vw, 168px);
+  --t-display-xl-lh:    0.92;
+  --t-display-xl-track: -0.04em;
+  --t-display-xl-weight: 300;
+
+  --t-display-lg-size:  clamp(48px, 6vw, 96px);
+  --t-display-lg-lh:    0.96;
+  --t-display-lg-track: -0.035em;
+  --t-display-lg-weight: 300;
+
+  --t-display-md-size:  clamp(32px, 3.6vw, 56px);
+  --t-display-md-lh:    1.02;
+  --t-display-md-track: -0.025em;
+  --t-display-md-weight: 400;
+
+  --t-h1-size: 40px; --t-h1-lh: 1.08; --t-h1-track: -0.02em;  --t-h1-weight: 500;
+  --t-h2-size: 28px; --t-h2-lh: 1.18; --t-h2-track: -0.015em; --t-h2-weight: 500;
+  --t-h3-size: 18px; --t-h3-lh: 1.3;  --t-h3-track: -0.005em; --t-h3-weight: 500;
+
+  --t-lead-size: 19px; --t-lead-lh: 1.55;
+  --t-body-size: 15px; --t-body-lh: 1.6;
+  --t-small-size: 13px; --t-small-lh: 1.5;
+
+  /* Mono labels carry serious visual weight in v2 */
+  --t-micro-size: 11px; --t-micro-lh: 1.4; --t-micro-track: 0.10em;
+  --t-eyebrow-size: 10.5px; --t-eyebrow-track: 0.22em; --t-eyebrow-weight: 500;
+
+  /* ── Core palette ──────────────────────────────────────────── */
+  /* The lake at 3 a.m. — sky still glowing along the horizon. */
+  --abyss:         #07090C;   /* deepest; outer canvas, footer */
+  --night:         #0B1117;   /* primary canvas */
+  --night-elev-1:  #10171F;   /* surface 1 — cards, panels */
+  --night-elev-2:  #161F2A;   /* surface 2 — popovers, modals */
+  --night-elev-3:  #1E2937;   /* surface 3 — hover states */
+
+  /* Reflected light on dark water. */
+  --signal:        #6FE3D1;   /* luminous cyan-mint; the only true accent */
+  --signal-dim:    #3FA697;   /* darker signal for press / muted */
+  --signal-glow:   rgba(111, 227, 209, 0.15); /* glow halos */
+  --signal-soft:   rgba(111, 227, 209, 0.08);
+
+  /* Secondary accent — kept restrained. Used for "live" / warning states only. */
+  --ember:         #FFA86B;
+  --ember-dim:     #B86C3B;
+
+  /* Status (vivid against the dark canvas) */
+  --status-positive: #7BE085;
+  --status-warning:  #FFA86B;
+  --status-negative: #FF7A6B;
+  --status-info:     var(--signal);
+
+  /* ── Semantic ──────────────────────────────────────────────── */
+  --bg:           var(--night);
+  --bg-elevated:  var(--night-elev-1);
+  --bg-canvas:    var(--abyss);
+  --bg-inverse:   #F2F4F6;       /* rarely used; light "documents" only */
+
+  --fg:           #E8EDF2;       /* primary text */
+  --fg-muted:     #8B96A3;
+  --fg-subtle:    #5A6675;
+  --fg-faint:     #3A4453;
+  --fg-on-light:  #07090C;
+
+  --border:           rgba(232, 237, 242, 0.10);
+  --border-hairline:  rgba(232, 237, 242, 0.06);
+  --border-strong:    rgba(232, 237, 242, 0.18);
+  --border-signal:    rgba(111, 227, 209, 0.30);
+
+  --link:        var(--signal);
+  --link-hover:  #9AF0DF;
+
+  /* Grid overlay color (used as background pattern on canvas) */
+  --grid-line:    rgba(232, 237, 242, 0.025);
+  --grid-line-2:  rgba(232, 237, 242, 0.05);
+
+  /* ── Spacing ───────────────────────────────────────────────── */
+  --space-0: 0; --space-1: 2px; --space-2: 4px; --space-3: 8px;
+  --space-4: 12px; --space-5: 16px; --space-6: 20px; --space-7: 24px;
+  --space-8: 32px; --space-9: 40px; --space-10: 48px; --space-11: 64px;
+  --space-12: 80px; --space-13: 96px; --space-14: 128px; --space-15: 160px; --space-16: 200px;
+
+  /* ── Radius ────────────────────────────────────────────────── */
+  /* Sharp. Operator-panel sharp. */
+  --radius-none: 0;
+  --radius-xs:   1px;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   6px;
+  --radius-pill: 999px;
+
+  /* ── Shadow & glow ─────────────────────────────────────────── */
+  --shadow-hairline: 0 0 0 1px var(--border);
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.5), 0 0 0 1px var(--border-hairline);
+  --shadow-2: 0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px var(--border);
+  --shadow-3: 0 16px 40px rgba(0,0,0,0.6), 0 0 0 1px var(--border);
+  --shadow-4: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px var(--border-strong);
+
+  /* Signal glow — used on focused/active accent elements */
+  --glow-signal-sm: 0 0 12px rgba(111, 227, 209, 0.35);
+  --glow-signal-md: 0 0 24px rgba(111, 227, 209, 0.30);
+  --glow-signal-lg: 0 0 64px rgba(111, 227, 209, 0.20);
+
+  /* ── Motion ────────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-quiet:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-instant: 80ms;
+  --dur-fast:    160ms;
+  --dur-base:    240ms;
+  --dur-slow:    400ms;
+
+  /* ── Layout ────────────────────────────────────────────────── */
+  --container-narrow:  680px;
+  --container-text:    760px;
+  --container-default: 1240px;
+  --container-wide:    1400px;
+}
+
+/* ── Semantic type classes ───────────────────────────────────── */
+.t-display-xl {
+  font-family: var(--font-display);
+  font-size: var(--t-display-xl-size);
+  line-height: var(--t-display-xl-lh);
+  letter-spacing: var(--t-display-xl-track);
+  font-weight: var(--t-display-xl-weight);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.t-display-lg {
+  font-family: var(--font-display);
+  font-size: var(--t-display-lg-size);
+  line-height: var(--t-display-lg-lh);
+  letter-spacing: var(--t-display-lg-track);
+  font-weight: var(--t-display-lg-weight);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.t-display-md {
+  font-family: var(--font-display);
+  font-size: var(--t-display-md-size);
+  line-height: var(--t-display-md-lh);
+  letter-spacing: var(--t-display-md-track);
+  font-weight: var(--t-display-md-weight);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.t-h1 { font-family: var(--font-sans); font-size: var(--t-h1-size); line-height: var(--t-h1-lh); letter-spacing: var(--t-h1-track); font-weight: var(--t-h1-weight); color: var(--fg); }
+.t-h2 { font-family: var(--font-sans); font-size: var(--t-h2-size); line-height: var(--t-h2-lh); letter-spacing: var(--t-h2-track); font-weight: var(--t-h2-weight); color: var(--fg); }
+.t-h3 { font-family: var(--font-sans); font-size: var(--t-h3-size); line-height: var(--t-h3-lh); letter-spacing: var(--t-h3-track); font-weight: var(--t-h3-weight); color: var(--fg); }
+
+.t-lead  { font-family: var(--font-sans); font-size: var(--t-lead-size); line-height: var(--t-lead-lh); font-weight: 400; color: var(--fg-muted); text-wrap: pretty; }
+.t-body  { font-family: var(--font-sans); font-size: var(--t-body-size); line-height: var(--t-body-lh); font-weight: 400; color: var(--fg); text-wrap: pretty; }
+.t-small { font-family: var(--font-sans); font-size: var(--t-small-size); line-height: var(--t-small-lh); color: var(--fg-muted); }
+
+.t-micro {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro-size);
+  line-height: var(--t-micro-lh);
+  letter-spacing: var(--t-micro-track);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+.t-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow-size);
+  font-weight: var(--t-eyebrow-weight);
+  letter-spacing: var(--t-eyebrow-track);
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.t-italic-accent {
+  font-family: var(--font-italic-accent);
+  font-style: italic;
+}
+
+/* Base resets */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--signal); color: var(--abyss); }

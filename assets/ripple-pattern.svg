@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E2A36" stop-opacity="0"></stop>
+      <stop offset="40%" stop-color="#0E2A36" stop-opacity="0.18"></stop>
+      <stop offset="100%" stop-color="#0E2A36" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#fade)" stroke-width="0.9" fill="none">
+    <path d="M0 30 Q 50 22 100 30 T 200 30 T 300 30 T 400 30"></path>
+    <path d="M0 50 Q 50 40 100 50 T 200 50 T 300 50 T 400 50"></path>
+    <path d="M0 70 Q 50 60 100 70 T 200 70 T 300 70 T 400 70"></path>
+    <path d="M0 90 Q 50 80 100 90 T 200 90 T 300 90 T 400 90"></path>
+    <path d="M0 110 Q 50 100 100 110 T 200 110 T 300 110 T 400 110"></path>
+    <path d="M0 130 Q 50 120 100 130 T 200 130 T 300 130 T 400 130"></path>
+    <path d="M0 150 Q 50 140 100 150 T 200 150 T 300 150 T 400 150"></path>
+    <path d="M0 170 Q 50 160 100 170 T 200 170 T 300 170 T 400 170"></path>
+    <path d="M0 190 Q 50 180 100 190 T 200 190 T 300 190 T 400 190"></path>
+    <path d="M0 210 Q 50 200 100 210 T 200 210 T 300 210 T 400 210"></path>
+  </g>
+</svg>

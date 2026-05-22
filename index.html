@@ -1,68 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lake Project</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lake-Project — The studio behind quiet, well-built things.</title>
+<meta name="description" content="Lake-Project is the practice of Alexander van der Plas — senior commercial & product advisory for logistics businesses, and a portfolio of software shipped under the same roof." />
+<meta property="og:title" content="Lake-Project" />
+<meta property="og:description" content="Senior commercial & product advisory for logistics. Founder of Podfy and JustFit." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="/assets/lake-project-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/colors_and_type.css" />
+<link rel="stylesheet" href="/site.css" />
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0a0f1e;
-      color: #e8eaf0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: #4a6fa5;
-      margin: 1.5rem auto;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #8a9bb5;
-      letter-spacing: 0.05em;
-    }
-
-    .coming-soon {
-      display: inline-block;
-      margin-top: 2rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #4a6fa5;
-      border: 1px solid #1e3a5f;
-      padding: 0.5rem 1.5rem;
-      border-radius: 2px;
-    }
-  </style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-9vi/sOa/P8rEIjhd9sJnDfRXrGFSGEMERKKGN4+Kz6lHQ3s3LvZLApXBqr1ePh7" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-L4vS5HKtLm37f0HLhxL3ixarQjXB2tKsLQgRz0mQUq7q3zQnOHBbNc0bJwTQnfq" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Lake Project</h1>
-    <div class="divider"></div>
-    <p>Rotterdam &mdash; KvK 29816688</p>
-    <span class="coming-soon">Coming Soon</span>
-  </div>
+<div id="root"></div>
+
+<script type="text/babel" src="/components/Header.jsx"></script>
+<script type="text/babel" src="/components/Hero.jsx"></script>
+<script type="text/babel" src="/components/Practice.jsx"></script>
+<script type="text/babel" src="/components/Ventures.jsx"></script>
+<script type="text/babel" src="/components/Resume.jsx"></script>
+<script type="text/babel" src="/components/Contact.jsx"></script>
+<script type="text/babel" src="/components/Footer.jsx"></script>
+<script type="text/babel" src="/App.jsx"></script>
 </body>
 </html>
