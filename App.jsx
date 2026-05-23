@@ -42,6 +42,18 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <nav className="lp-mobile-nav" aria-label="Mobile navigation">
+        {["practice", "ventures", "resume", "contact"].map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={active === id ? "is-active" : ""}
+            onClick={(e) => { e.preventDefault(); onNav(id); }}
+          >
+            {id}
+          </a>
+        ))}
+      </nav>
     </div>
   );
 }

@@ -1265,13 +1265,13 @@ main, header, footer { position: relative; z-index: 1; }
   animation: lp-pulse-signal 2s infinite;
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
+/* ── Responsive — tablet/mobile ──────────────────────────── */
 @media (max-width: 960px) {
   .lp-header { grid-template-columns: 1fr auto; padding: 16px 20px; }
   .lp-header.is-scrolled { padding: 12px 20px; }
   .lp-header__meta { display: none; }
   .lp-header__nav { gap: 0; padding: 3px; }
-  .lp-header__link { padding: 6px 12px; }
+  .lp-header__link { padding: 6px 12px; font-size: 10px; }
   .lp-hero { padding: 140px 20px 80px; }
   .lp-hero__coords { padding: 0 20px; top: 100px; }
   .lp-hero__inner::before, .lp-hero__inner::after { display: none; }
@@ -1287,10 +1287,96 @@ main, header, footer { position: relative; z-index: 1; }
   .lp-resume__meta > div:nth-child(2) { border-right: none; }
   .lp-role__head { grid-template-columns: 40px 1fr 24px; padding-left: 16px; }
   .lp-role__head-meta { display: none; }
-  .lp-role__body { padding: 0 16px 28px 76px; grid-template-columns: 1fr; gap: 16px; }
+  .lp-role__body { padding: 0 16px 28px 56px; grid-template-columns: 1fr; gap: 16px; }
   .lp-contact__grid { grid-template-columns: 1fr; gap: 48px; }
   .lp-contact__row { grid-template-columns: 1fr; }
   .lp-footer__inner { grid-template-columns: 1fr; }
   .lp-footer__cols { grid-template-columns: 1fr 1fr; gap: 32px; }
   .lp-footer__base { flex-direction: column; gap: 16px; align-items: flex-start; }
+}
+
+/* ── Responsive — small phones ───────────────────────────── */
+@media (max-width: 480px) {
+  /* Header: logo only, no nav pill overflow */
+  .lp-header { padding: 14px 16px; }
+  .lp-header__nav { display: none; }
+
+  /* Mobile nav drawer replacement — simple bottom-anchored links */
+  .lp-mobile-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    display: flex; justify-content: space-around; align-items: center;
+    padding: 12px 0 max(12px, env(safe-area-inset-bottom));
+    background: rgba(11, 17, 23, 0.92);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-top: 1px solid var(--border);
+  }
+  .lp-mobile-nav a {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    padding: 8px 4px;
+    transition: color var(--dur-fast) var(--ease-quiet);
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+  }
+  .lp-mobile-nav a:hover,
+  .lp-mobile-nav a.is-active { color: var(--signal); }
+
+  /* Give the page room for the bottom nav */
+  body { padding-bottom: 64px; }
+
+  /* Hero */
+  .lp-hero { padding: 110px 16px 64px; }
+  .lp-hero__coords { display: none; }
+  .lp-hero__eyebrow { margin-bottom: 32px; font-size: 9.5px; }
+  .lp-hero__title { font-size: clamp(44px, 12vw, 64px); margin-bottom: 24px; }
+  .lp-hero__lead { font-size: 16px; margin-bottom: 32px; }
+  .lp-hero__actions { flex-direction: column; gap: 10px; width: 100%; }
+  .lp-hero__actions .btn { width: 100%; justify-content: center; }
+  .lp-hero__facts { grid-template-columns: 1fr 1fr; gap: 20px 0; margin-top: 40px; }
+  .lp-hero__facts > div { padding-right: 12px; }
+  .lp-hero__facts dd { font-size: 15px; }
+
+  /* Sections */
+  .lp-practice, .lp-ventures, .lp-resume, .lp-contact { padding: 72px 16px; }
+  .lp-footer { padding: 64px 16px 32px; }
+
+  /* Practice */
+  .lp-practice__title,
+  .lp-ventures__title,
+  .lp-resume__title,
+  .lp-contact__title { font-size: clamp(32px, 9vw, 48px); }
+  .lp-service { grid-template-columns: 44px 1fr; gap: 12px; padding: 24px 0; }
+  .lp-service__title { font-size: 22px; }
+  .lp-service__blurb { font-size: 13.5px; }
+  .lp-practice__aside { padding: 24px 20px; }
+
+  /* Ventures */
+  .lp-venture { padding: 24px; }
+  .lp-venture__headline { font-size: 22px; }
+  .lp-venture__stats { grid-template-columns: repeat(3, 1fr); }
+  .lp-venture__stats dd { font-size: 18px; }
+
+  /* Resume */
+  .lp-resume__meta { grid-template-columns: 1fr 1fr; gap: 20px 0; }
+  .lp-resume__timeline { padding: 16px; }
+  .lp-resume__timeline-label { flex-direction: column; gap: 4px; }
+  .lp-role__head { gap: 12px; padding: 20px 0 20px 12px; }
+  .lp-role__title { font-size: 20px; }
+  .lp-role__body { padding: 0 12px 24px 12px; }
+  .lp-role__bullets li { font-size: 13.5px; }
+  .lp-resume__cta { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  /* Contact */
+  .lp-contact__direct > div { grid-template-columns: 1fr; gap: 4px; }
+  .lp-contact__form-wrap { padding: 24px 20px; }
+  .lp-contact__chips { gap: 6px; }
+  .lp-chip { font-size: 9.5px; padding: 7px 10px; }
+
+  /* Footer */
+  .lp-footer__cols { grid-template-columns: 1fr; gap: 24px; }
+  .lp-footer__base-meta { flex-direction: column; gap: 8px; }
 }

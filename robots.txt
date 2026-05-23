@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lake-project.com/sitemap.xml
