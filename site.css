@@ -16,19 +16,6 @@ html, body {
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 
-/* ── Page-wide ambient grid ────────────────────────────────── */
-/* A barely-visible 88px grid sits behind everything — */
-/* it gives the page the feeling of being plotted, not just laid out. */
-body::before {
-  content: "";
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 88px 88px;
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* Subtle radial glow at top of page — "the signal coming in" */
 body::after {
