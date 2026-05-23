@@ -50,7 +50,7 @@ function Ventures() {
           </h2>
         </div>
         <p className="lp-ventures__lead">
-          The studio operates a small portfolio of software alongside the consultancy. They're not side projects — they're working products with paying users, and they keep the practice honest. I can't tell a 3PL CEO how to ship product if I'm not shipping product.
+          The studio operates two software products alongside the consultancy. Built the same way as the logistics work — defined scope, governed catalogue, value-based pricing. They're not side projects. They're the proof that the method works outside a freight context too.
         </p>
       </header>
 

@@ -562,6 +562,150 @@ main, header, footer { position: relative; z-index: 1; }
 }
 .lp-practice__aside-text strong { font-weight: 500; color: var(--signal); }
 
+/* ── Practice aside variant ──────────────────────────────── */
+.lp-practice__aside--builder {
+  margin-top: 16px;
+  border-left-color: var(--ember);
+}
+.lp-practice__aside--builder::before {
+  background: var(--ember);
+  box-shadow: 0 0 16px var(--ember);
+}
+.lp-practice__aside--builder .lp-practice__aside-eyebrow { color: var(--ember); }
+.lp-practice__aside--builder strong { color: var(--ember); }
+
+/* ── Builder ─────────────────────────────────────────────── */
+.lp-builder {
+  background: var(--abyss);
+  padding: 144px 40px;
+  position: relative;
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.lp-builder__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.lp-builder__head {
+  margin-bottom: 72px;
+  max-width: 760px;
+}
+.lp-builder__title {
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  font-weight: 200;
+  color: var(--fg);
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+.lp-builder__title em {
+  font-family: var(--font-italic-accent);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--signal);
+}
+.lp-builder__lead {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--fg-muted);
+  max-width: 60ch;
+  margin: 0;
+  text-wrap: pretty;
+  font-weight: 300;
+}
+.lp-builder__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.lp-builder__card {
+  background: var(--night-elev-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--dur-base) var(--ease-quiet),
+              box-shadow var(--dur-base) var(--ease-quiet),
+              transform var(--dur-base) var(--ease-out);
+}
+.lp-builder__card::before {
+  content: attr(data-id);
+  position: absolute;
+  top: 16px; right: 20px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.20em;
+  color: var(--fg-faint);
+}
+/* Signal stripe on top edge */
+.lp-builder__card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+  box-shadow: 0 0 8px var(--signal);
+}
+.lp-builder__card:hover { transform: translateY(-2px); border-color: var(--border-signal); box-shadow: var(--shadow-2), var(--glow-signal-sm); }
+.lp-builder__card:hover::after { transform: scaleX(1); }
+
+.lp-builder__card-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.lp-builder__card-label {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--fg);
+  margin: 0;
+}
+.lp-builder__card-desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--fg-muted);
+  margin: 0;
+  flex: 1;
+  text-wrap: pretty;
+  font-weight: 300;
+}
+.lp-builder__card-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-hairline);
+}
+.lp-builder__card-tags li {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  padding: 4px 10px;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
 /* ── Ventures ────────────────────────────────────────────── */
 .lp-ventures {
   background: var(--bg-canvas);
@@ -1294,6 +1438,8 @@ main, header, footer { position: relative; z-index: 1; }
   .lp-practice__head, .lp-ventures__head { grid-template-columns: 1fr; gap: 32px; }
   .lp-service { grid-template-columns: 56px 1fr; gap: 16px; padding: 28px 0; }
   .lp-service__meta, .lp-service__chev { display: none; }
+  .lp-builder { padding: 96px 20px; }
+  .lp-builder__grid { grid-template-columns: 1fr; gap: 16px; }
   .lp-ventures__list { grid-template-columns: 1fr; }
   .lp-resume__meta { grid-template-columns: 1fr 1fr; gap: 24px 0; }
   .lp-resume__meta > div:nth-child(2) { border-right: none; }
@@ -1365,6 +1511,10 @@ main, header, footer { position: relative; z-index: 1; }
   .lp-service__title { font-size: 22px; }
   .lp-service__blurb { font-size: 13.5px; }
   .lp-practice__aside { padding: 24px 20px; }
+
+  /* Builder */
+  .lp-builder { padding: 72px 16px; }
+  .lp-builder__card { padding: 24px; }
 
   /* Ventures */
   .lp-venture { padding: 24px; }

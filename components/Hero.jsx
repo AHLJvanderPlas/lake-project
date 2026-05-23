@@ -62,7 +62,7 @@ function Hero({ onNav }) {
         </h1>
 
         <p className="lp-hero__lead">
-          Lake-Project is the practice of <strong>Alexander van der Plas</strong> — senior commercial &amp; product advisory for logistics businesses, and a small portfolio of software shipped under the same roof.
+          Lake-Project is the practice of <strong>Alexander van der Plas</strong> — commercial operator and product builder. In logistics, he turns bespoke contract books into modular, governed product catalogues. Outside it, he ships software. The discipline is the same in both.
         </p>
 
         <div className="lp-hero__actions">
@@ -76,8 +76,8 @@ function Hero({ onNav }) {
 
         <dl className="lp-hero__facts">
           <div>
-            <dt>Practice since</dt>
-            <dd>2017</dd>
+            <dt>Products built</dt>
+            <dd>3 — and counting</dd>
           </div>
           <div>
             <dt>Current post</dt>

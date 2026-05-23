@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Header, Hero, Practice, Ventures, Resume, Contact, Footer */
+/* global React, ReactDOM, Header, Hero, Practice, Builder, Ventures, Resume, Contact, Footer */
 const { useEffect, useState, useCallback } = React;
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
       <main>
         <Hero onNav={onNav} />
         <Practice />
+        <Builder />
         <Ventures />
         <Resume />
         <Contact />

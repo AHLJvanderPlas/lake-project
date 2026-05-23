@@ -77,7 +77,14 @@ function Practice() {
       <aside className="lp-practice__aside">
         <div className="lp-practice__aside-eyebrow t-micro">⌑ A note on scope</div>
         <p className="lp-practice__aside-text">
-          I take on <strong>two to three engagements a year</strong>, alongside a full-time commercial role at DSV. That's a deliberate cap. If you need a team and a project plan with thirty workstreams, this isn't the right shop — you need a Big-Four consultancy. If you need one person who has actually owned the P&amp;L and can sit across from your CFO at the contract table, we should talk.
+          I take on <strong>two to three engagements a year</strong>, alongside a full-time commercial role at DSV. That's a deliberate cap. If you need a team and a project plan with thirty workstreams, this isn't the right shop — you need a Big-Four consultancy. If you need one person who has actually owned the P&amp;L, built the product, and can sit across from your CFO at the contract table, we should talk.
+        </p>
+      </aside>
+
+      <aside className="lp-practice__aside lp-practice__aside--builder">
+        <div className="lp-practice__aside-eyebrow t-micro">⌑ Why product governance, specifically</div>
+        <p className="lp-practice__aside-text">
+          P.04 isn't a bolt-on service. It's the reason the other three exist. Every contract restructuring and pricing model engagement eventually produces the same question: <strong>how do you govern this thing once it's built?</strong> I've answered that for a 60,000 m² pharma and chemical logistics portfolio. The answer for a B2B SaaS product — catalogue definition, change control, pricing discipline, KPIs — is the same job in a different format.
         </p>
       </aside>
     </section>
