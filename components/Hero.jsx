@@ -1,53 +1,12 @@
 /* global React */
-const { useEffect: useEffectHero, useState: useStateHero } = React;
 
 function Hero({ onNav }) {
-  const [t, setT] = useStateHero(0);
-  useEffectHero(() => {
-    let raf;
-    const start = performance.now();
-    const tick = (now) => {
-      setT((now - start) / 1000);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
-  const lines = [];
-  for (let i = 0; i < 28; i++) {
-    const base = 30 + i * 14;
-    const amp = 4 + Math.sin(i * 0.4) * 3;
-    const freq = 1.4 + (i % 5) * 0.2;
-    const phase = i * 0.5 + t * (0.3 + (i % 3) * 0.05);
-    const points = [];
-    for (let x = 0; x <= 720; x += 12) {
-      const y = base + Math.sin((x / 720) * Math.PI * 2 * freq + phase) * amp;
-      points.push(`${x},${y.toFixed(1)}`);
-    }
-    const opacity = 0.5 - (i / 28) * 0.45;
-    lines.push(
-      <polyline
-        key={i}
-        points={points.join(" ")}
-        fill="none"
-        stroke="rgba(111,227,209,1)"
-        strokeOpacity={opacity}
-        strokeWidth="0.7"
-      />
-    );
-  }
-
   return (
     <section className="lp-hero" id="top">
       <div className="lp-hero__coords" aria-hidden="true">
         <div><span className="lp-hero__coords-tick" /> N 51°40′13″ · E 4°36′40″</div>
         <div>SIG · 442.MHz · RX <span className="lp-hero__coords-tick" /></div>
       </div>
-
-      <svg className="lp-hero__signal" viewBox="0 0 720 440" preserveAspectRatio="none" aria-hidden="true">
-        {lines}
-      </svg>
 
       <div className="lp-hero__inner">
         <div className="lp-hero__eyebrow">
