@@ -1,20 +1,88 @@
 /* global React */
-const { useState: useStateContact } = React;
+const { useState: useStateContact, useEffect: useEffectContact, useRef: useRefContact } = React;
+
+const TURNSTILE_SITEKEY = "0x4AAAAAADUvTJOOVICfz1ng";
 
 function Contact() {
-  const [sent, setSent] = useStateContact(false);
+  const [status, setStatus] = useStateContact("idle"); // idle | submitting | sent | error
+  const [errorMsg, setErrorMsg] = useStateContact("");
   const [topic, setTopic] = useStateContact("contract");
   const [form, setForm] = useStateContact({ name: "", company: "", email: "", note: "" });
+  const [tsToken, setTsToken] = useStateContact(null);
+  const tsWidgetRef = useRefContact(null);
+  const tsIdRef = useRefContact(null);
 
-  const onSubmit = (e) => {
+  // Render Turnstile widget once the script is available
+  useEffectContact(() => {
+    let attempts = 0;
+    const tryRender = () => {
+      if (window.turnstile && tsWidgetRef.current && !tsIdRef.current) {
+        tsIdRef.current = window.turnstile.render(tsWidgetRef.current, {
+          sitekey: TURNSTILE_SITEKEY,
+          theme: "dark",
+          callback: (token) => setTsToken(token),
+          "expired-callback": () => setTsToken(null),
+          "error-callback": () => setTsToken(null),
+        });
+      } else if (attempts < 20) {
+        attempts++;
+        setTimeout(tryRender, 300);
+      }
+    };
+    tryRender();
+    return () => {
+      if (tsIdRef.current && window.turnstile) {
+        window.turnstile.remove(tsIdRef.current);
+        tsIdRef.current = null;
+      }
+    };
+  }, []);
+
+  // Reset Turnstile widget after failed submission
+  const resetTurnstile = () => {
+    if (tsIdRef.current && window.turnstile) {
+      window.turnstile.reset(tsIdRef.current);
+    }
+    setTsToken(null);
+  };
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const topicLabel = topics.find((t) => t.id === topic)?.label || topic;
-    const subject = encodeURIComponent(`[Lake-Project] ${topicLabel} — ${form.company || form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company || "—"}\nReply-to: ${form.email}\n\n${form.note}`
-    );
-    window.open(`mailto:hello@lake-project.com?subject=${subject}&body=${body}`);
-    setSent(true);
+    if (!tsToken) return; // widget not completed yet
+    setStatus("submitting");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          topic: topics.find((t) => t.id === topic)?.label || topic,
+          turnstileToken: tsToken,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrorMsg(data.error || "Something went wrong.");
+        setStatus("error");
+        resetTurnstile();
+      } else {
+        setStatus("sent");
+      }
+    } catch {
+      setErrorMsg("Network error — please email directly.");
+      setStatus("error");
+      resetTurnstile();
+    }
+  };
+
+  const reset = () => {
+    setStatus("idle");
+    setErrorMsg("");
+    setForm({ name: "", company: "", email: "", note: "" });
+    setTopic("contract");
+    resetTurnstile();
   };
 
   const topics = [
@@ -63,8 +131,24 @@ function Contact() {
         </header>
 
         <div className="lp-contact__form-wrap">
-          {!sent ? (
-            <form className="lp-contact__form" onSubmit={onSubmit}>
+          {status === "sent" ? (
+            <div className="lp-contact__sent">
+              <div className="lp-contact__sent-mark">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div className="lp-contact__form-prompt">Transmission acknowledged</div>
+              <h3 className="lp-contact__sent-title">Received.</h3>
+              <p className="lp-contact__sent-text">
+                I'll reply within two working days — usually from a Dutch evening. If it's urgent, say so in any follow-up.
+              </p>
+              <button className="btn btn--ghost" onClick={reset}>
+                Send another →
+              </button>
+            </div>
+          ) : (
+            <form className="lp-contact__form" onSubmit={onSubmit} noValidate>
               <div className="lp-contact__form-prompt">Compose transmission</div>
 
               <div className="lp-contact__topic">
@@ -127,31 +211,26 @@ function Contact() {
                 />
               </label>
 
+              {/* Turnstile widget */}
+              <div ref={tsWidgetRef} style={{ minHeight: "65px" }} />
+
+              {errorMsg && (
+                <p className="lp-contact__error">{errorMsg}</p>
+              )}
+
               <div className="lp-contact__submit">
-                <button type="submit" className="btn btn--primary">
-                  Transmit →
+                <button
+                  type="submit"
+                  className="btn btn--primary"
+                  disabled={status === "submitting" || !tsToken}
+                >
+                  {status === "submitting" ? "Sending…" : "Transmit →"}
                 </button>
                 <span className="lp-contact__legal">
-                  Opens your mail client · read only by Alexander
+                  Reads only by Alexander · never shared
                 </span>
               </div>
             </form>
-          ) : (
-            <div className="lp-contact__sent">
-              <div className="lp-contact__sent-mark">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
-              <div className="lp-contact__form-prompt">Transmission acknowledged</div>
-              <h3 className="lp-contact__sent-title">Received.</h3>
-              <p className="lp-contact__sent-text">
-                Your mail client should have opened with the message pre-filled. I'll reply within two working days — usually from a Dutch evening. If it's urgent, say so in the subject line.
-              </p>
-              <button className="btn btn--ghost" onClick={() => { setSent(false); setForm({ name: "", company: "", email: "", note: "" }); }}>
-                Send another →
-              </button>
-            </div>
           )}
         </div>
       </div>

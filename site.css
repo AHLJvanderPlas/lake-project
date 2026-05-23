@@ -1146,6 +1146,18 @@ main, header, footer { position: relative; z-index: 1; }
 .lp-field textarea::placeholder { color: var(--fg-faint); }
 
 .lp-contact__submit { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
+.lp-contact__error {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--status-negative);
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 122, 107, 0.25);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 122, 107, 0.06);
+}
+
 .lp-contact__legal {
   font-family: var(--font-mono);
   font-size: 10px;
