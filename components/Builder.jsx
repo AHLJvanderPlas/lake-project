@@ -7,24 +7,24 @@ function Builder() {
       context: "Logistics product · DSV",
       label: "The distribution catalogue",
       description:
-        "A book of bespoke per-customer deals — cost-plus, renegotiated annually — turned into a modular, governed, value-priced product portfolio. Served B2B and B2C demand across 60,000 m² and 150 FTE. Built with the same rigour as any software product: catalogue definition, change control, pricing discipline, service KPIs.",
-      tags: ["Product design", "Pricing model", "Governance framework"],
+        "Problem: a 60,000 m² multi-site pharma and chemical operation priced freight as a cost line — bespoke per customer, renegotiated annually, with no governed catalogue. Design solution: analyse the full operational width, define a modular product architecture, establish governance and KPI frameworks, lead the commercial change cross-functionally, hand over a running product portfolio priced on delivered value.",
+      tags: ["Design thinking", "Modular architecture", "Value pricing"],
     },
     {
       id: "B.02",
       context: "Logistics SaaS · podfy.net",
       label: "Podfy",
       description:
-        "Proof of delivery without an app. Scoped from a single, specific problem — CMR documentation is broken for small carriers — and shipped as a single, specific product. No scope creep. No feature factory. A link, a photo, a stamped GPS-tagged record in 11 seconds.",
-      tags: ["Product build", "Benelux logistics", "Zero-install"],
+        "Problem: CMR proof-of-delivery is broken for small Benelux carriers — paper-based, slow, and legally fragile. Design solution: scoped tightly to one problem, built as one product. A link, a photo, a stamped GPS-tagged EU-archived CMR back in 11 seconds. Zero app, zero training, zero onboarding friction. Priced per upload.",
+      tags: ["Problem definition", "Zero-friction UX", "Per-use pricing"],
     },
     {
       id: "B.03",
       context: "AI fitness SaaS · justfit.cc",
       label: "JustFit",
       description:
-        "Adaptive training coach. The product insight was simple: most fitness apps assume you have the same 60 minutes every day. JustFit doesn't. Bad sleep, twenty-five minutes, sore knee — it generates a session that fits. Four governed training paths, one clear pricing model.",
-      tags: ["AI product", "Adaptive UX", "Value-based pricing"],
+        "Problem: fitness apps are rigid — they assume the same sixty minutes every day. Design insight: the real product is adaptability, not a training plan. Engineered four governed training paths (general fitness, running, cycling, military prep) with an AI layer that generates sessions around the day you actually have. Free tier permanent, Pro €4.99.",
+      tags: ["Design insight", "Adaptive engineering", "Freemium structure"],
     },
   ];
 
@@ -36,14 +36,14 @@ function Builder() {
           <div className="lp-section-eyebrow">
             <span className="lp-section-eyebrow__line" />
             <span className="lp-section-eyebrow__num">// Builder</span>
-            <span>The through-line</span>
+            <span>Design thinking in practice</span>
           </div>
           <h2 className="lp-builder__title">
-            One discipline.<br />
+            One method.<br />
             <em>Three products.</em>
           </h2>
           <p className="lp-builder__lead">
-            Whether the output is a freight-product catalogue or a proof-of-delivery SaaS, the work is the same: define the scope precisely, govern the catalogue, price on value, and ship something you can stand behind. Format changes. Method doesn't.
+            Design thinking applied at every scale — from a pharmaceutical warehouse workflow to a proof-of-delivery SaaS. Analyse the problem, design an integrated solution, lead the build cross-functionally, price on value, hand over something that runs. The format changes. The discipline doesn't.
           </p>
         </header>
 

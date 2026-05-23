@@ -82,7 +82,7 @@ function Resume() {
           <em>three different jobs.</em>
         </h2>
         <p className="lp-resume__lead">
-          I'm Alexander. I run commercial and product for distribution at DSV's Benelux contract-logistics business. Before that, contract management; before that, key accounts and a multi-site pharma + chemical portfolio. Pick any role below.
+          TU Delft engineering background. Eight years at DSV across the full operational and commercial width — contract management, key accounts, pharma and chemical operations, freight product design, and current freight operations leadership. Design thinking applied throughout: every role produced something modular, governed, and handed over to operations.
         </p>
 
         <div className="lp-resume__meta">
@@ -95,8 +95,8 @@ function Resume() {
             <span className="lp-resume__meta-value">Moerdijk, NL</span>
           </div>
           <div>
-            <span className="t-micro lp-resume__meta-label">Carried skills</span>
-            <span className="lp-resume__meta-value">P&amp;L · Contract · Product</span>
+            <span className="t-micro lp-resume__meta-label">Core method</span>
+            <span className="lp-resume__meta-value">Design thinking · Engineering</span>
           </div>
           <div>
             <span className="t-micro lp-resume__meta-label">Languages</span>

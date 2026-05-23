@@ -4,27 +4,27 @@ function Practice() {
   const services = [
     {
       num: "P.01",
-      title: "Contract restructuring",
-      blurb: "Take a book of bespoke per-customer deals and turn it into a catalogued, governed product portfolio. The work that moves freight from a cost-plus line to a defined commercial proposition.",
-      meta: ["8–12 weeks", "Joint w/ leadership", "Fixed scope"],
+      title: "Integrated solution design",
+      blurb: "Design thinking applied to operations and commercial problems. From a messy, poorly-defined issue to a detailed, integrated solution — modular in architecture, documented to hand-over level. Not a recommendation deck. Something your operations team can actually run the day after engagement ends.",
+      meta: ["Design thinking", "Problem → hand-over", "Modular output"],
     },
     {
       num: "P.02",
-      title: "Modular pricing models",
-      blurb: "Value-based pricing for freight, warehousing, and contract logistics. Tiered service catalogues that scale across a customer base without eroding margin or service consistency.",
-      meta: ["6–10 weeks", "Pricing + finance", "Catalogue + pricebook"],
+      title: "Operational architecture",
+      blurb: "Full-width warehousing and contract-logistics expertise — process design, workflow integration, capacity modelling, performance frameworks. Built on TU Delft analytical foundations and tested in regulated, multi-site, high-complexity environments including pharmaceutical and chemical operations under SQAS and PharmaQMS.",
+      meta: ["Process design", "Multi-site · regulated", "Performance systems"],
     },
     {
       num: "P.03",
-      title: "Strategic account architecture",
-      blurb: "Restructure engagement with your largest accounts around a long-term agenda — sustainability, network resilience, cost-to-serve — turning annual renegotiations into multi-year partnerships.",
-      meta: ["Ongoing · retainer", "C-suite + procurement", "Multi-year plays"],
+      title: "Gain sharing & value structures",
+      blurb: "Commercial structures that align your incentives with your partners'. Gain share, tiered service models, value-based pricing — designed as creative commercial mechanics, not standard rate negotiations. The kind of structure that converts annual renegotiations into multi-year partnerships and that competitors price themselves out of matching.",
+      meta: ["Gain share design", "Value-based pricing", "Multi-year plays"],
     },
     {
       num: "P.04",
-      title: "Product governance for B2B SaaS",
-      blurb: "For founders shipping into logistics, freight, or fleet markets. Catalogue definition, change control, pricing discipline, service KPIs — borrowed from regulated supply-chain ops and applied to software.",
-      meta: ["Advisory · monthly", "Founder + product lead", "Governance framework"],
+      title: "Cross-functional leadership to hand-over",
+      blurb: "Leading complex change across operations, commercial, IT, and finance — without direct authority over any of them. The engagement ends at a real hand-over: documented, adopted, and running. Not handed to a project manager on day ninety with a slide deck and a good-luck card.",
+      meta: ["Cross-functional", "No direct authority", "Delivered to hand-over"],
     },
   ];
 
@@ -38,13 +38,13 @@ function Practice() {
             <span>Practice</span>
           </div>
           <h2 className="lp-practice__title">
-            Modular commercial models<br />
-            for logistics businesses<br />
-            that <em>still price by the kilo.</em>
+            Design thinking.<br />
+            Engineering rigour.<br />
+            <em>Delivered to hand-over.</em>
           </h2>
         </div>
         <p className="lp-practice__lead">
-          Four engagement shapes. Always joint with your leadership — never a slide-deck-and-leave. Lake-Project repositions propositions from cost-plus to value-based, then hands you something your commercial team can actually sell.
+          Four engagement shapes — each rooted in the same method: understand the problem analytically, design an integrated and modular solution, lead the change cross-functionally, and leave something that operations can run without you.
         </p>
       </header>
 
@@ -75,16 +75,16 @@ function Practice() {
       </ol>
 
       <aside className="lp-practice__aside">
-        <div className="lp-practice__aside-eyebrow t-micro">⌑ A note on scope</div>
+        <div className="lp-practice__aside-eyebrow t-micro">⌑ The method</div>
         <p className="lp-practice__aside-text">
-          I take on <strong>two to three engagements a year</strong>, alongside a full-time commercial role at DSV. That's a deliberate cap. If you need a team and a project plan with thirty workstreams, this isn't the right shop — you need a Big-Four consultancy. If you need one person who has actually owned the P&amp;L, built the product, and can sit across from your CFO at the contract table, we should talk.
+          Design thinking is not a workshop format. It's <strong>a way of treating every problem as a design problem</strong> — something to be understood deeply before it's solved, and solved in a way that integrates with the system around it. The TU Delft analytical background is what keeps it grounded: every solution is modelled, stress-tested against operational reality, and scoped to what can actually be governed once it's handed over.
         </p>
       </aside>
 
       <aside className="lp-practice__aside lp-practice__aside--builder">
-        <div className="lp-practice__aside-eyebrow t-micro">⌑ Why product governance, specifically</div>
+        <div className="lp-practice__aside-eyebrow t-micro">⌑ A note on scope</div>
         <p className="lp-practice__aside-text">
-          P.04 isn't a bolt-on service. It's the reason the other three exist. Every contract restructuring and pricing model engagement eventually produces the same question: <strong>how do you govern this thing once it's built?</strong> I've answered that for a 60,000 m² pharma and chemical logistics portfolio. The answer for a B2B SaaS product — catalogue definition, change control, pricing discipline, KPIs — is the same job in a different format.
+          I take on <strong>two to three engagements a year</strong>, alongside a full-time operational role at DSV. That's a deliberate cap — not a constraint. If you need a large team and thirty workstreams, this isn't the right shop. If you need one person who can design the solution, lead the change cross-functionally, and still be there at hand-over, we should talk.
         </p>
       </aside>
     </section>

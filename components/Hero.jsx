@@ -62,7 +62,7 @@ function Hero({ onNav }) {
         </h1>
 
         <p className="lp-hero__lead">
-          Lake-Project is the practice of <strong>Alexander van der Plas</strong> — commercial operator and product builder. In logistics, he turns bespoke contract books into modular, governed product catalogues. Outside it, he ships software. The discipline is the same in both.
+          Lake-Project is the practice of <strong>Alexander van der Plas</strong> — logistics engineer, operations architect, and product builder. TU Delft analytical foundations. Eight years across the full width of DSV's contract-logistics business — operational and commercial. Design thinking as the default method: every engagement ends at hand-over level.
         </p>
 
         <div className="lp-hero__actions">
@@ -76,16 +76,16 @@ function Hero({ onNav }) {
 
         <dl className="lp-hero__facts">
           <div>
-            <dt>Products built</dt>
-            <dd>3 — and counting</dd>
+            <dt>Education</dt>
+            <dd>TU Delft · Engineering</dd>
           </div>
           <div>
             <dt>Current post</dt>
             <dd>FOM · DSV Moerdijk</dd>
           </div>
           <div>
-            <dt>Ventures · LIVE</dt>
-            <dd><span className="lp-hero__fact-tick" />Podfy <span className="lp-hero__fact-soft">/</span> JustFit</dd>
+            <dt>Products built</dt>
+            <dd><span className="lp-hero__fact-tick" />3 — and counting</dd>
           </div>
           <div>
             <dt>Languages</dt>

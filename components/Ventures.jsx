@@ -50,7 +50,7 @@ function Ventures() {
           </h2>
         </div>
         <p className="lp-ventures__lead">
-          The studio operates two software products alongside the consultancy. Built the same way as the logistics work — defined scope, governed catalogue, value-based pricing. They're not side projects. They're the proof that the method works outside a freight context too.
+          Two software products built outside of DSV — same design-thinking method, same modular discipline, different domain. Podfy and JustFit aren't side projects. They're what happens when you apply an engineer's analytical rigour and a designer's approach to problems you care about solving.
         </p>
       </header>
 
