@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/components-links.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 164px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="t-micro" style="margin-bottom: 12px;">// Inline links · default + hover</div>
+  <div style="font-family: var(--font-sans); font-size: 16px; line-height: 1.7; color: var(--fg); font-weight: 300;">
+    Alexander runs Lake-Project from <a href="#" style="color: var(--signal); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;">Moerdijk, Netherlands</a>, and is currently shaping freight propositions at <a href="#" style="color: var(--link-hover); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px;">DSV Contract Logistics</a> ↗
+  </div>
+
+  <div class="t-micro" style="margin: 22px 0 12px;">// Pill navigation</div>
+  <div style="display: inline-flex; gap: 4px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 999px; padding: 4px;">
+    <a href="#" style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); padding: 8px 14px; border-radius: 999px;">Practice</a>
+    <a href="#" style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); padding: 8px 14px; border-radius: 999px;">Ventures</a>
+    <a href="#" style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--signal); padding: 8px 14px; border-radius: 999px; background: var(--signal-soft);">Resume</a>
+    <a href="#" style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); padding: 8px 14px; border-radius: 999px;">Contact</a>
+  </div>
+</div>
+</body>
+</html>

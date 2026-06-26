@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/type-sans-scale.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 344px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="t-h1" style="margin-bottom: 4px;">H1 — Repositioning the commercial model</div>
+  <div class="meta" style="margin-bottom: 16px;">Geist 500 · 40/43 · -2.0% track</div>
+  <div class="t-h2" style="margin-bottom: 4px;">H2 — Modular product portfolios</div>
+  <div class="meta" style="margin-bottom: 16px;">Geist 500 · 28/33 · -1.5% track</div>
+  <div class="t-h3" style="margin-bottom: 4px;">H3 — Contract restructuring</div>
+  <div class="meta" style="margin-bottom: 16px;">Geist 500 · 18/23 · -0.5% track</div>
+  <div class="t-lead" style="margin-bottom: 4px;">Lead — Take a book of bespoke per-customer deals and turn it into a catalogued, governed product portfolio.</div>
+  <div class="meta" style="margin-bottom: 16px;">Geist 400 · 19/29</div>
+  <div class="t-body" style="margin-bottom: 4px;">Body — The brand never sells aggressively. It states what it does, who it's for, and lets the reader infer the rest.</div>
+  <div class="meta">Geist 400 · 15/24</div>
+</div>
+</body>
+</html>

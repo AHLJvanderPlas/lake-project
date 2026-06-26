@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/brand-wordmark.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card {
+    padding: 24px 28px; box-sizing: border-box; position: relative; z-index: 1;
+    min-height: 244px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+
+  /* Shared stacked logo: LAKE scaled 1.75× to match PROJECT in extended geometric sans. */
+  .logo {
+    --logo-size: 28px;
+    display: inline-block;
+    font-family: var(--font-logo);
+    font-weight: 400;
+    line-height: 0.94;
+    text-align: center;
+  }
+  .logo__lake    { display: block; font-size: calc(var(--logo-size) * 1.75); }
+  .logo__project { display: block; font-size: var(--logo-size); margin-top: 0.06em; }
+
+  .tile {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 22px 18px;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .tile__head {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-subtle);
+    margin-bottom: auto;
+  }
+  .tile__head-num {
+    color: var(--signal);
+    border: 1px solid var(--border-signal);
+    background: var(--signal-soft);
+    padding: 2px 8px; border-radius: 2px;
+  }
+  .tile__body {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    min-height: 110px;
+  }
+  .tile__foot {
+    margin-top: 12px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--fg-subtle);
+    text-align: center;
+  }
+
+  /* A — on night, fg colour, large */
+  .tile--lg { background: var(--night-elev-1); color: var(--fg); }
+  .tile--lg .logo { --logo-size: 26px; color: var(--fg); }
+
+  /* B — signal accent, medium, on abyss */
+  .tile--signal { background: var(--abyss); color: var(--signal); }
+  .tile--signal .logo { --logo-size: 18px; color: var(--signal); }
+
+  /* C — header lockup, very small */
+  .tile--mini { background: var(--night); color: var(--fg); }
+  .tile--mini .logo { --logo-size: 11px; }
+  .tile--mini .lockup {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--border); border-radius: 999px;
+    background: var(--night-elev-1);
+  }
+  .tile--mini .lockup__dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--status-positive);
+    box-shadow: 0 0 6px var(--status-positive);
+  }
+  .tile--mini .lockup__loc {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="tile tile--lg">
+    <div class="tile__head">
+      <span class="tile__head-num">// A</span>
+      <span>Primary</span>
+    </div>
+    <div class="tile__body">
+      <div class="logo">
+        <span class="logo__lake">LAKE</span>
+        <span class="logo__project">PROJECT</span>
+      </div>
+    </div>
+    <div class="tile__foot">FG colour · PROJECT 26px / LAKE 1.75×</div>
+  </div>
+
+  <div class="tile tile--signal">
+    <div class="tile__head" style="color: var(--fg-subtle);">
+      <span class="tile__head-num">// B</span>
+      <span>Signal accent</span>
+    </div>
+    <div class="tile__body">
+      <div class="logo">
+        <span class="logo__lake">LAKE</span>
+        <span class="logo__project">PROJECT</span>
+      </div>
+    </div>
+    <div class="tile__foot">Signal · 18px · for hero / hover</div>
+  </div>
+
+  <div class="tile tile--mini">
+    <div class="tile__head">
+      <span class="tile__head-num">// C</span>
+      <span>Header lockup</span>
+    </div>
+    <div class="tile__body">
+      <span class="lockup">
+        <span class="logo">
+          <span class="logo__lake">LAKE</span>
+          <span class="logo__project">PROJECT</span>
+        </span>
+        <span class="lockup__dot"></span>
+        <span class="lockup__loc">Moerdijk · NL</span>
+      </span>
+    </div>
+    <div class="tile__foot">11px · paired w/ location</div>
+  </div>
+
+</div>
+
+</body>
+</html>

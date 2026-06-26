@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/components-card.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 264px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 4px; padding: 32px; position: relative; overflow: hidden; max-width: 540px; box-shadow: var(--shadow-2);">
+    <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 2px; background: var(--signal); box-shadow: 0 0 12px var(--signal);"></div>
+    <div style="position: absolute; top: 14px; right: 18px; font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-faint); letter-spacing: 0.20em;">V.01</div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+      <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--status-positive); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;">
+        <span style="width: 6px; height: 6px; border-radius: 999px; background: var(--status-positive); box-shadow: 0 0 6px var(--status-positive);"></span>LIVE
+      </span>
+      <span style="color: var(--fg-faint);">·</span>
+      <span style="color: var(--fg); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Podfy</span>
+      <span style="color: var(--fg-faint);">/</span>
+      <span style="color: var(--signal); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">podfy.net</span>
+    </div>
+    <div style="font-family: var(--font-sans); font-size: 28px; line-height: 1.05; color: var(--fg); letter-spacing: -0.025em; margin-bottom: 12px; font-weight: 300;">Proof of delivery — without the app.</div>
+    <div style="font-family: var(--font-sans); font-size: 14.5px; line-height: 1.55; color: var(--fg-muted); margin-bottom: 18px; font-weight: 300;">
+      Send a driver a link. They photograph the CMR. You get a stamped, GPS-tagged record back in seconds.
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding-top: 16px; border-top: 1px solid var(--border-hairline);">
+      <div style="border-right: 1px solid var(--border-hairline); padding-right: 12px;">
+        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-subtle); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px;">Median upload</div>
+        <div style="font-family: var(--font-sans); font-size: 22px; color: var(--fg); font-weight: 300;">11 s</div>
+      </div>
+      <div style="border-right: 1px solid var(--border-hairline); padding: 0 12px;">
+        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-subtle); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px;">Apps</div>
+        <div style="font-family: var(--font-sans); font-size: 22px; color: var(--fg); font-weight: 300;">0</div>
+      </div>
+      <div style="padding-left: 12px;">
+        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-subtle); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px;">EU archive</div>
+        <div style="font-family: var(--font-sans); font-size: 22px; color: var(--fg); font-weight: 300;">7 yrs</div>
+      </div>
+    </div>
+  </div>
+  <div class="meta" style="margin-top: 16px;">// Canonical venture card · 2px signal stripe · corner ID · stats grid · sharp corners</div>
+</div>
+</body>
+</html>

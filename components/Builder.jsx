@@ -26,6 +26,14 @@ function Builder() {
         "Problem: fitness apps are rigid — they assume the same sixty minutes every day. Design insight: the real product is adaptability, not a training plan. Engineered four governed training paths (general fitness, running, cycling, military prep) with an AI layer that generates sessions around the day you actually have. Free tier permanent, Pro €4.99.",
       tags: ["Design insight", "Adaptive engineering", "Freemium structure"],
     },
+    {
+      id: "B.04",
+      context: "Personal site · harryvanderplas.com",
+      label: "Harry van der Plas",
+      description:
+        "Brief: a personal site with a blog, file hosting, and authenticated access — built to last, not to be maintained. Design solution: React on Cloudflare Pages, D1 for content, R2 for files, role-based auth. Same Night Station design system as Lake-Project. Handed over running.",
+      tags: ["Client build", "Cloudflare stack", "Night Station"],
+    },
   ];
 
   return (
@@ -40,7 +48,7 @@ function Builder() {
           </div>
           <h2 className="lp-builder__title">
             One method.<br />
-            <em>Three products.</em>
+            <em>Four outputs.</em>
           </h2>
           <p className="lp-builder__lead">
             Design thinking applied at every scale — from a pharmaceutical warehouse workflow to a proof-of-delivery SaaS. Analyse the problem, design an integrated solution, lead the build cross-functionally, price on value, hand over something that runs. The format changes. The discipline doesn't.

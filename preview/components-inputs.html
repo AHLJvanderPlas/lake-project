@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/components-inputs.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 224px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="t-micro" style="margin-bottom: 12px;">// Text field · resting / focus</div>
+  <div style="display: flex; gap: 12px;">
+    <div style="flex: 1;">
+      <label style="display: block; font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); margin-bottom: 6px; letter-spacing: 0.14em; text-transform: uppercase;">// Email</label>
+      <input value="alexander@lake-project.com" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--border); border-radius: 2px; background: var(--night); font-family: var(--font-sans); font-size: 14.5px; color: var(--fg);"/>
+    </div>
+    <div style="flex: 1;">
+      <label style="display: block; font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); margin-bottom: 6px; letter-spacing: 0.14em; text-transform: uppercase;">// Company</label>
+      <input placeholder="Where do you work?" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--signal); border-radius: 2px; background: var(--night); font-family: var(--font-sans); font-size: 14.5px; color: var(--fg); outline: none; box-shadow: 0 0 0 3px var(--signal-soft);"/>
+    </div>
+  </div>
+
+  <div class="t-micro" style="margin: 22px 0 12px;">// Textarea + helper</div>
+  <label style="display: block; font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); margin-bottom: 6px; letter-spacing: 0.14em; text-transform: uppercase;">// Brief on the situation</label>
+  <textarea rows="3" placeholder="A messy contract book. A modular pricing model. A product idea." style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--border); border-radius: 2px; background: var(--night); font-family: var(--font-sans); font-size: 14.5px; color: var(--fg); resize: vertical;"></textarea>
+  <div class="meta-low" style="margin-top: 6px;">▸ Replies within 2 working days · NL/EN/DE</div>
+</div>
+</body>
+</html>

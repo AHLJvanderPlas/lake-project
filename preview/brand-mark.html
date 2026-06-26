@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/brand-mark.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card {
+    padding: 28px 32px; box-sizing: border-box; position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center;
+    min-height: 244px;
+  }
+  .specimen {
+    background: var(--night-elev-1);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 24px;
+    color: var(--fg);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 200px;
+  }
+  .specimen::before, .specimen::after {
+    content: ""; position: absolute; width: 12px; height: 12px;
+    border-color: var(--signal); border-style: solid; opacity: 0.5;
+  }
+  .specimen::before { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
+  .specimen::after  { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+
+  /* Stacked logo — LAKE scaled up by 1.75× to match PROJECT's width */
+  .logo {
+    --logo-size: 56px;
+    display: inline-block;
+    font-family: var(--font-logo);
+    font-weight: 400;
+    color: var(--fg);
+    line-height: 0.94;
+    text-align: center;
+  }
+  .logo__lake { display: block; font-size: calc(var(--logo-size) * 1.75); }
+  .logo__project { display: block; font-size: var(--logo-size); margin-top: 0.06em; }
+
+  .label-row {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 12px;
+  }
+  .eyebrow-num {
+    color: var(--signal);
+    border: 1px solid var(--border-signal);
+    background: var(--signal-soft);
+    padding: 2px 8px; border-radius: 2px;
+  }
+  .name  { font-family: var(--font-sans); font-size: 14px; color: var(--fg); font-weight: 500; margin-bottom: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-subtle); letter-spacing: 0.10em; text-transform: uppercase; line-height: 1.6; }
+  .rules {
+    display: flex; flex-direction: column; gap: 8px;
+    margin-top: 16px;
+  }
+  .rule {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .rule::before {
+    content: ""; width: 4px; height: 4px; border-radius: 999px;
+    background: var(--signal); box-shadow: 0 0 6px var(--signal);
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="specimen">
+    <div class="logo">
+      <span class="logo__lake">LAKE</span>
+      <span class="logo__project">PROJECT</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="label-row">
+      <span class="eyebrow-num">// MARK</span>
+      <span>Primary brand</span>
+    </div>
+    <div class="name">Stacked name logo · Eurostile</div>
+    <div class="meta">LAKE is 1.75× the size of PROJECT — both render to the same width in extended geometric sans</div>
+    <div class="rules">
+      <div class="rule">Eurostile · substituted with Michroma</div>
+      <div class="rule">Always all caps · width parity</div>
+      <div class="rule">Pairs with fg or signal cyan only</div>
+      <div class="rule">Minimum: PROJECT 11px = 30px tall</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

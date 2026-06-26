@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/type-display.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 304px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="font-family: var(--font-sans); font-size: 92px; line-height: 0.92; letter-spacing: -0.04em; color: var(--fg); font-weight: 200;">
+    The studio behind<br/><span style="font-family: var(--font-italic-accent); font-style: italic; color: var(--signal); font-weight: 400;">quiet,</span> well-built things.
+  </div>
+  <hr class="hair"/>
+  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <div class="meta">Geist 200 · 92/85 · -4.0% track · serif accent on single words</div>
+    <div class="meta" style="color: var(--signal);">// Display XL</div>
+  </div>
+</div>
+</body>
+</html>

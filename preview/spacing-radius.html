@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>preview/spacing-radius.html</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+  .card { padding: 28px 32px; min-height: 124px; box-sizing: border-box; position: relative; z-index: 1; }
+  .swatch {
+    height: 64px; border-radius: 2px;
+    border: 1px solid var(--border-hairline);
+    display: flex; align-items: flex-end; padding: 8px 10px;
+    color: var(--fg);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .swatch.dark { color: var(--fg); }
+  .swatch.light { color: var(--abyss); }
+  .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-subtle); margin-top: 8px; }
+  .name  { font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 500; margin-top: 8px; letter-spacing: -0.005em; }
+  .meta  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-low  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  hr.hair { border: 0; border-top: 1px solid var(--border-hairline); margin: 14px 0; }
+  .eyebrow-num {
+    color: var(--signal); font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border-signal); padding: 2px 8px; border-radius: 2px;
+    background: var(--signal-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="display: flex; gap: 16px; align-items: flex-end;">
+    
+      <div style="text-align: center;">
+        <div style="width: 80px; height: 80px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 1px;"></div>
+        <div class="name">--radius-xs</div>
+        <div class="meta-low">1px</div>
+      </div>
+    
+      <div style="text-align: center;">
+        <div style="width: 80px; height: 80px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 2px;"></div>
+        <div class="name">--radius-sm</div>
+        <div class="meta-low">2px</div>
+      </div>
+    
+      <div style="text-align: center;">
+        <div style="width: 80px; height: 80px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 4px;"></div>
+        <div class="name">--radius-md</div>
+        <div class="meta-low">4px</div>
+      </div>
+    
+      <div style="text-align: center;">
+        <div style="width: 80px; height: 80px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 6px;"></div>
+        <div class="name">--radius-lg</div>
+        <div class="meta-low">6px</div>
+      </div>
+    
+      <div style="text-align: center;">
+        <div style="width: 80px; height: 80px; background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 999px;"></div>
+        <div class="name">--radius-pill</div>
+        <div class="meta-low">999px</div>
+      </div>
+    
+  </div>
+  <div class="meta" style="margin-top: 16px;">// Operator-panel sharp · buttons sm · cards md · pills only when actually capsule</div>
+</div>
+</body>
+</html>
