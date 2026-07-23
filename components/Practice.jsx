@@ -3,48 +3,48 @@
 function Practice() {
   const services = [
     {
-      num: "P.01",
-      title: "Integrated solution design",
-      blurb: "Design thinking applied to operations and commercial problems. From a messy, poorly-defined issue to a detailed, integrated solution — modular in architecture, documented to hand-over level. Not a recommendation deck. Something your operations team can actually run the day after engagement ends.",
-      meta: ["Design thinking", "Problem → hand-over", "Modular output"],
+      num: "S.01",
+      title: "Custom SaaS architecture",
+      blurb: "Back-end systems scoped to one problem and built to last. Cloudflare Workers, D1, and R2 as the default stack — globally distributed, zero cold-starts, no infrastructure to manage. Modular in design so features can be added without rewriting the foundation.",
+      meta: ["Cloudflare Workers", "D1 · R2 storage", "Modular architecture"],
     },
     {
-      num: "P.02",
-      title: "Operational architecture",
-      blurb: "Full-width warehousing and contract-logistics expertise — process design, workflow integration, capacity modelling, performance frameworks. Built on TU Delft analytical foundations and tested in regulated, multi-site, high-complexity environments including pharmaceutical and chemical operations under SQAS and PharmaQMS.",
-      meta: ["Process design", "Multi-site · regulated", "Performance systems"],
+      num: "S.02",
+      title: "Admin & client portals",
+      blurb: "Internal dashboards and client-facing portals built for real operational use — passkey authentication, role-based access, billing, document management, and audit trails. Designed to be handed to operations and run without a developer in the loop.",
+      meta: ["Passkey auth", "Billing & invoicing", "Document management"],
     },
     {
-      num: "P.03",
-      title: "Gain sharing & value structures",
-      blurb: "Commercial structures that align your incentives with your partners'. Gain share, tiered service models, value-based pricing — designed as creative commercial mechanics, not standard rate negotiations. The kind of structure that converts annual renegotiations into multi-year partnerships and that competitors price themselves out of matching.",
-      meta: ["Gain share design", "Value-based pricing", "Multi-year plays"],
+      num: "S.03",
+      title: "Automation & integration",
+      blurb: "Real-time data scrapers, event-driven middleware, and queue-based processing pipelines. Things that run without being watched — fuel index feeds, newsletter engines, registration middleware, scheduled publishing. Built with Cloudflare Queues and Workers Cron so they survive load spikes and silent failures.",
+      meta: ["Live scrapers", "Queue consumers", "Event middleware"],
     },
     {
-      num: "P.04",
-      title: "Cross-functional leadership to hand-over",
-      blurb: "Leading complex change across operations, commercial, IT, and finance — without direct authority over any of them. The engagement ends at a real hand-over: documented, adopted, and running. Not handed to a project manager on day ninety with a slide deck and a good-luck card.",
-      meta: ["Cross-functional", "No direct authority", "Delivered to hand-over"],
+      num: "S.04",
+      title: "Full-stack product delivery",
+      blurb: "From brief to deployed, running product. React frontends, Worker-based APIs, D1 databases, R2 file storage. Design thinking applied throughout: understand the problem analytically before writing code, build something modular, hand over something that operations can run the day the engagement ends.",
+      meta: ["React · Vite", "End-to-end delivery", "Hand-over level"],
     },
   ];
 
   return (
-    <section className="lp-practice" id="practice">
+    <section className="lp-practice" id="services">
       <header className="lp-practice__head">
         <div>
           <div className="lp-section-eyebrow">
             <span className="lp-section-eyebrow__line" />
             <span className="lp-section-eyebrow__num">// 02</span>
-            <span>Practice</span>
+            <span>Services</span>
           </div>
           <h2 className="lp-practice__title">
-            Design thinking.<br />
-            Engineering rigour.<br />
+            One stack.<br />
+            Four shapes.<br />
             <em>Delivered to hand-over.</em>
           </h2>
         </div>
         <p className="lp-practice__lead">
-          Four engagement shapes — each rooted in the same method: understand the problem analytically, design an integrated and modular solution, lead the change cross-functionally, and leave something that operations can run without you.
+          Every engagement starts the same way — define the problem precisely before deciding what to build. The output is always a deployed, running product: not a prototype, not a recommendation deck, and not something that needs a developer in the room to keep it alive.
         </p>
       </header>
 
@@ -75,16 +75,16 @@ function Practice() {
       </ol>
 
       <aside className="lp-practice__aside">
-        <div className="lp-practice__aside-eyebrow t-micro">⌑ The method</div>
+        <div className="lp-practice__aside-eyebrow t-micro">⌑ The stack</div>
         <p className="lp-practice__aside-text">
-          Design thinking is not a workshop format. It's <strong>a way of treating every problem as a design problem</strong> — something to be understood deeply before it's solved, and solved in a way that integrates with the system around it. The TU Delft analytical background is what keeps it grounded: every solution is modelled, stress-tested against operational reality, and scoped to what can actually be governed once it's handed over.
+          Cloudflare Workers, D1, R2, and Pages are the default platform — not because they're fashionable, but because they remove the infrastructure layer entirely. <strong>No servers, no containers, no DevOps overhead.</strong> The build is the product; the edge network handles the rest. Every product in the work portfolio runs on this stack.
         </p>
       </aside>
 
       <aside className="lp-practice__aside lp-practice__aside--builder">
-        <div className="lp-practice__aside-eyebrow t-micro">⌑ A note on scope</div>
+        <div className="lp-practice__aside-eyebrow t-micro">⌑ Scope</div>
         <p className="lp-practice__aside-text">
-          I take on <strong>two to three engagements a year</strong>, alongside a full-time operational role at DSV. That's a deliberate cap — not a constraint. If you need a large team and thirty workstreams, this isn't the right shop. If you need one person who can design the solution, lead the change cross-functionally, and still be there at hand-over, we should talk.
+          Lake-Project takes on <strong>a small number of builds at a time</strong> — not because of capacity, but because each one deserves the full analytical pass before a line of code is written. If you need a large agency with dedicated project managers and weekly status decks, this isn't the right shop. If you need one studio that can scope, build, and hand over a running product, we should talk.
         </p>
       </aside>
     </section>

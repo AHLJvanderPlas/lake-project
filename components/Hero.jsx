@@ -4,7 +4,7 @@ function Hero({ onNav }) {
   return (
     <section className="lp-hero" id="top">
       <div className="lp-hero__coords" aria-hidden="true">
-        <div><span className="lp-hero__coords-tick" /> N 51°40′13″ · E 4°36′40″</div>
+        <div><span className="lp-hero__coords-tick" /> N 51°55′21″ · E 4°28′45″</div>
         <div>SIG · 442.MHz · RX <span className="lp-hero__coords-tick" /></div>
       </div>
 
@@ -12,7 +12,7 @@ function Hero({ onNav }) {
         <div className="lp-hero__eyebrow">
           <span className="lp-hero__eyebrow-num">// 01</span>
           <span className="lp-hero__eyebrow-dot" />
-          <span className="lp-hero__eyebrow-text">Transmission from Moerdijk, NL</span>
+          <span className="lp-hero__eyebrow-text">Rotterdam, NL · Studio</span>
         </div>
 
         <h1 className="lp-hero__title">
@@ -21,12 +21,12 @@ function Hero({ onNav }) {
         </h1>
 
         <p className="lp-hero__lead">
-          Lake-Project is the practice of <strong>Alexander van der Plas</strong> — logistics engineer, operations architect, and product builder. TU Delft analytical foundations. Eight years across the full width of DSV's contract-logistics business — operational and commercial. Design thinking as the default method: every engagement ends at hand-over level.
+          Lake-Project designs and builds <strong>custom web-based SaaS products</strong> — back-end systems, automation tooling, and full-stack applications. Each build is scoped to one problem, engineered to run without ongoing involvement, and handed over as a working product.
         </p>
 
         <div className="lp-hero__actions">
-          <button className="btn btn--primary" onClick={() => onNav("practice")}>
-            View practice →
+          <button className="btn btn--primary" onClick={() => onNav("work")}>
+            View work →
           </button>
           <button className="btn btn--ghost" onClick={() => onNav("contact")}>
             Open channel
@@ -35,20 +35,20 @@ function Hero({ onNav }) {
 
         <dl className="lp-hero__facts">
           <div>
-            <dt>Education</dt>
-            <dd>TU Delft · Engineering</dd>
+            <dt>Stack</dt>
+            <dd>Cloudflare Workers · D1 · R2</dd>
           </div>
           <div>
-            <dt>Current post</dt>
-            <dd>FOM · DSV Moerdijk</dd>
+            <dt>Frontend</dt>
+            <dd>React · Vite · Pages</dd>
           </div>
           <div>
-            <dt>Products built</dt>
-            <dd><span className="lp-hero__fact-tick" />3 — and counting</dd>
+            <dt>Products in production</dt>
+            <dd><span className="lp-hero__fact-tick" />4 — and counting</dd>
           </div>
           <div>
-            <dt>Languages</dt>
-            <dd>NL · EN · DE</dd>
+            <dt>Based</dt>
+            <dd>Rotterdam · NL</dd>
           </div>
         </dl>
       </div>
@@ -58,9 +58,9 @@ function Hero({ onNav }) {
         <span className="lp-hero__ticker-arrow">→</span>
         <span>Podfy uptime · 99.97%</span>
         <span className="lp-hero__ticker-arrow">→</span>
-        <span>JustFit users · climbing</span>
+        <span>EMCT fuel index · real-time</span>
         <span className="lp-hero__ticker-arrow">→</span>
-        <span>Engagement slots · 1 of 3 open</span>
+        <span>Harry auto-publish · live</span>
       </div>
     </section>
   );

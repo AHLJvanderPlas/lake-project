@@ -1,75 +1,110 @@
 /* global React */
 
 function Builder() {
-  const outputs = [
+  const products = [
     {
-      id: "B.01",
-      context: "Logistics product · DSV",
-      label: "The distribution catalogue",
+      id: "P.01",
+      status: "LIVE",
+      context: "Internal · lake-project.com",
+      label: "Financial back-end",
       description:
-        "Problem: a 60,000 m² multi-site pharma and chemical operation priced freight as a cost line — bespoke per customer, renegotiated annually, with no governed catalogue. Design solution: analyse the full operational width, define a modular product architecture, establish governance and KPI frameworks, lead the commercial change cross-functionally, hand over a running product portfolio priced on delivered value.",
-      tags: ["Design thinking", "Modular architecture", "Value pricing"],
+        "The studio's own infrastructure. Client portal with passkey authentication, invoice administration and PDF generation, billing engine, and document storage. Built on D1, R2, and Workers — the same stack offered to clients. The back-office for Lake-Project's client engagements.",
+      tags: ["Client portal", "Billing engine", "Passkey auth"],
+      url: null,
     },
     {
-      id: "B.02",
-      context: "Logistics SaaS · podfy.net",
-      label: "Podfy",
+      id: "P.02",
+      status: "LIVE",
+      context: "3PL operations platform",
+      label: "EMCT",
       description:
-        "Problem: CMR proof-of-delivery is broken for small Benelux carriers — paper-based, slow, and legally fragile. Design solution: scoped tightly to one problem, built as one product. A link, a photo, a stamped GPS-tagged EU-archived CMR back in 11 seconds. Zero app, zero training, zero onboarding friction. Priced per upload.",
-      tags: ["Problem definition", "Zero-friction UX", "Per-use pricing"],
+        "Purpose-built for 3PL operations. Automated fuel cost indexation with live scraper feeds from carrier rate publications — no manual entry, no lag. Event registration middleware for operational workflows. Newsletter delivery optimisation engine. High-frequency, zero-human-in-the-loop data flow from source to output.",
+      tags: ["Live fuel scrapers", "Event middleware", "Newsletter engine"],
+      url: null,
     },
     {
-      id: "B.03",
-      context: "AI fitness SaaS · justfit.cc",
-      label: "JustFit",
-      description:
-        "Problem: fitness apps are rigid — they assume the same sixty minutes every day. Design insight: the real product is adaptability, not a training plan. Engineered four governed training paths (general fitness, running, cycling, military prep) with an AI layer that generates sessions around the day you actually have. Free tier permanent, Pro €4.99.",
-      tags: ["Design insight", "Adaptive engineering", "Freemium structure"],
-    },
-    {
-      id: "B.04",
-      context: "Personal site · harryvanderplas.com",
+      id: "P.03",
+      status: "LIVE",
+      context: "LinkedIn publishing platform · harryvanderplas.com",
       label: "Harry van der Plas",
       description:
-        "Brief: a personal site with a blog, file hosting, and authenticated access — built to last, not to be maintained. Design solution: React on Cloudflare Pages, D1 for content, R2 for files, role-based auth. Same Night Station design system as Lake-Project. Handed over running.",
-      tags: ["Client build", "Cloudflare stack", "Night Station"],
+        "Fully automated LinkedIn publishing pipeline. AI content generation from source documents, research, and repository items. Multi-stage approval workflow with email notifications. Timed auto-publish with randomised slots to avoid detectable posting patterns. Engagement analytics and a full admin back-end. React + Cloudflare Workers + D1.",
+      tags: ["AI content pipeline", "Auto-publish", "Analytics"],
+      url: "https://harryvanderplas.com",
+    },
+    {
+      id: "P.04",
+      status: "LIVE",
+      context: "SaaS · podfy.net",
+      label: "Podfy",
+      description:
+        "Full SaaS stack: marketing site, driver web-app, customer portal, admin back-end, and billing engine. Proof of delivery for Benelux carriers — send a driver a link, they photograph the CMR, you get a GPS-tagged EU-archived record in 11 seconds. Zero app install, zero onboarding, priced per upload.",
+      tags: ["Full SaaS stack", "EU archive", "Billing engine"],
+      url: "https://podfy.net",
     },
   ];
 
   return (
-    <section className="lp-builder" id="builder">
+    <section className="lp-builder" id="work">
       <div className="lp-builder__inner">
 
         <header className="lp-builder__head">
           <div className="lp-section-eyebrow">
             <span className="lp-section-eyebrow__line" />
-            <span className="lp-section-eyebrow__num">// Builder</span>
-            <span>Design thinking in practice</span>
+            <span className="lp-section-eyebrow__num">// 03</span>
+            <span>Work</span>
           </div>
           <h2 className="lp-builder__title">
-            One method.<br />
-            <em>Four outputs.</em>
+            Four products.<br />
+            <em>All in production.</em>
           </h2>
           <p className="lp-builder__lead">
-            Design thinking applied at every scale — from a pharmaceutical warehouse workflow to a proof-of-delivery SaaS. Analyse the problem, design an integrated solution, lead the build cross-functionally, price on value, hand over something that runs. The format changes. The discipline doesn't.
+            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system — not a prototype, not a pilot. Same method, same stack, different domain.
           </p>
         </header>
 
         <div className="lp-builder__grid">
-          {outputs.map((o) => (
-            <article key={o.id} className="lp-builder__card" data-id={o.id}>
+          {products.map((p) => (
+            <article key={p.id} className="lp-builder__card" data-id={p.id}>
               <div className="lp-builder__card-meta">
-                <span className="lp-builder__card-context">{o.context}</span>
+                <span className="lp-venture__live" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginRight: "10px" }}>
+                  <span className="lp-venture__live-dot" />
+                  {p.status}
+                </span>
+                <span className="lp-builder__card-context">{p.context}</span>
               </div>
-              <h3 className="lp-builder__card-label">{o.label}</h3>
-              <p className="lp-builder__card-desc">{o.description}</p>
+              <h3 className="lp-builder__card-label">{p.label}</h3>
+              <p className="lp-builder__card-desc">{p.description}</p>
               <ul className="lp-builder__card-tags">
-                {o.tags.map((t) => (
+                {p.tags.map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
+              {p.url && (
+                <a
+                  className="lp-venture__visit"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "16px" }}
+                >
+                  Visit ↗
+                </a>
+              )}
             </article>
           ))}
+        </div>
+
+        <div style={{ marginTop: "48px", padding: "20px 24px", border: "1px solid var(--border-hairline)", borderRadius: "4px" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fg-faint)" }}>// Also built</span>
+          <div style={{ marginTop: "10px", display: "flex", alignItems: "baseline", gap: "16px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "13px", color: "var(--fg-muted)" }}>
+              <strong style={{ color: "var(--fg)", fontWeight: 500 }}>JustFit</strong>
+              {" "}— AI fitness coaching app. Adaptive workout generation for general fitness, running, cycling, and military prep.{" "}
+              <a href="https://justfit.cc" target="_blank" rel="noopener noreferrer" style={{ color: "var(--fg-subtle)" }}>justfit.cc ↗</a>
+              {" "}<span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--fg-faint)", letterSpacing: "0.1em" }}>· development paused</span>
+            </span>
+          </div>
         </div>
 
       </div>

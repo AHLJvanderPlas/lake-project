@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lake-Project — Alexander van der Plas · Design Thinking for Logistics & Operations</title>
-<meta name="description" content="Lake-Project is the practice of Alexander van der Plas — TU Delft engineer, logistics operator, and product builder. Integrated solution design, operational architecture, gain sharing, and cross-functional leadership delivered to hand-over level. Founder of Podfy and JustFit." />
-<meta name="author" content="Alexander van der Plas" />
+<title>Lake-Project — Custom SaaS & Back-end Development · Rotterdam</title>
+<meta name="description" content="Lake-Project is a Rotterdam studio that designs and builds custom web-based SaaS products — back-end systems, automation tooling, and full-stack applications on Cloudflare Workers, D1, and R2. Four products in production." />
+<meta name="author" content="Lake-Project" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://lake-project.com" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="Lake-Project — Alexander van der Plas" />
-<meta property="og:description" content="Senior commercial & product advisory for logistics businesses. Modular pricing models, contract restructuring, strategic accounts. Founder of Podfy and JustFit." />
+<meta property="og:title" content="Lake-Project — Custom SaaS & Back-end Development" />
+<meta property="og:description" content="Rotterdam studio building custom web-based SaaS products. Back-end systems, automation pipelines, and full-stack applications. Four products in production on Cloudflare Workers, D1, and R2." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lake-project.com" />
 <meta property="og:locale" content="en_GB" />
@@ -19,57 +19,20 @@
 
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Lake-Project — Alexander van der Plas" />
-<meta name="twitter:description" content="Senior commercial & product advisory for logistics. Founder of Podfy and JustFit." />
+<meta name="twitter:title" content="Lake-Project — Custom SaaS & Back-end Development" />
+<meta name="twitter:description" content="Rotterdam studio. Custom SaaS products, automation tooling, and full-stack delivery on Cloudflare Workers." />
 
-<!-- Structured data — Person + LocalBusiness (GEO / AI search) -->
+<!-- Structured data — Studio + Products -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      "@id": "https://lake-project.com/#alexander",
-      "name": "Alexander van der Plas",
-      "jobTitle": "Freight Operations Manager",
-      "description": "Commercial and product leader in logistics with 8+ years at DSV. P&L owner, contract architect, and modular pricing specialist for 3PLs, carriers and shippers. Founder of Podfy (proof-of-delivery SaaS) and JustFit (AI training coach).",
-      "url": "https://lake-project.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/alexandervanderplas"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "DSV — Global Transport and Logistics"
-      },
-      "knowsAbout": [
-        "Design thinking",
-        "Integrated solution design",
-        "Warehousing operations",
-        "Contract logistics",
-        "Operational architecture",
-        "Gain sharing structures",
-        "Value-based pricing",
-        "Cross-functional leadership",
-        "Product governance",
-        "Modular systems design",
-        "Freight operations management",
-        "B2B SaaS product development",
-        "Engineering — TU Delft"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Moerdijk",
-        "addressRegion": "North Brabant",
-        "addressCountry": "NL"
-      }
-    },
-    {
       "@type": "ProfessionalService",
       "@id": "https://lake-project.com/#studio",
       "name": "Lake-Project",
-      "description": "Logistics commercial advisory studio. Contract restructuring, modular pricing models, strategic account architecture, and product governance for B2B SaaS. Run by Alexander van der Plas.",
+      "description": "Rotterdam studio that designs and builds custom web-based SaaS products. Back-end systems on Cloudflare Workers and D1, automation tooling, client portals, and full-stack product delivery.",
       "url": "https://lake-project.com",
-      "founder": { "@id": "https://lake-project.com/#alexander" },
       "areaServed": ["NL", "BE", "DE", "EU"],
       "knowsLanguage": ["nl", "en", "de"],
       "address": {
@@ -84,51 +47,38 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Advisory services",
+        "name": "SaaS development services",
         "itemListElement": [
-          { "@type": "Offer", "name": "Contract restructuring" },
-          { "@type": "Offer", "name": "Modular pricing models" },
-          { "@type": "Offer", "name": "Strategic account architecture" },
-          { "@type": "Offer", "name": "Product governance for B2B SaaS" }
+          { "@type": "Offer", "name": "Custom SaaS architecture" },
+          { "@type": "Offer", "name": "Admin and client portals" },
+          { "@type": "Offer", "name": "Automation and integration" },
+          { "@type": "Offer", "name": "Full-stack product delivery" }
         ]
       }
-    }
-  ]
-}
-</script>
-
-<link rel="me" href="https://alexandervanderplas.com">
-<link rel="me" href="https://podfy.net">
-<link rel="me" href="https://harryvanderplas.com">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Lake Project",
-  "url": "https://lake-project.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Alexander van der Plas",
-    "url": "https://alexandervanderplas.com"
-  },
-  "sameAs": [
-    "https://alexandervanderplas.com"
-  ],
-  "owns": [
+    },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://podfy.net/#app",
       "name": "Podfy",
-      "url": "https://podfy.net"
+      "description": "Proof of delivery SaaS for Benelux carriers. GPS-tagged, EU-archived CMR records in 11 seconds. Full stack: marketing site, driver app, customer portal, admin back-end, billing engine.",
+      "url": "https://podfy.net",
+      "applicationCategory": "BusinessApplication",
+      "creator": { "@id": "https://lake-project.com/#studio" }
     },
     {
       "@type": "WebSite",
+      "@id": "https://harryvanderplas.com/#site",
       "name": "Harry van der Plas",
-      "url": "https://harryvanderplas.com"
+      "description": "Fully automated LinkedIn publishing platform. AI content generation, approval workflow, timed auto-publish, and engagement analytics.",
+      "url": "https://harryvanderplas.com",
+      "creator": { "@id": "https://lake-project.com/#studio" }
     }
   ]
 }
 </script>
 
+<link rel="me" href="https://podfy.net">
+<link rel="me" href="https://harryvanderplas.com">
 <link rel="icon" href="/assets/lake-project-mark.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="/colors_and_type.css" />
 <link rel="stylesheet" href="/site.css" />
@@ -145,8 +95,6 @@
 <script type="text/babel" src="/components/Hero.jsx"></script>
 <script type="text/babel" src="/components/Practice.jsx"></script>
 <script type="text/babel" src="/components/Builder.jsx"></script>
-<script type="text/babel" src="/components/Ventures.jsx"></script>
-<script type="text/babel" src="/components/Resume.jsx"></script>
 <script type="text/babel" src="/components/Contact.jsx"></script>
 <script type="text/babel" src="/components/Footer.jsx"></script>
 <script type="text/babel" src="/App.jsx"></script>

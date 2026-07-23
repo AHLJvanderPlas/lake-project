@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Verwerkersovereenkomst — Lake-Project</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/assets/lake-project-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/colors_and_type.css" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--abyss);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(111,227,209,0.05) 0%, transparent 70%);
+}
+
+.wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 32px 80px; }
+
+/* Topbar */
+.topbar { display: flex; align-items: center; gap: 16px; padding: 24px 0 20px; border-bottom: 1px solid var(--border-hairline); margin-bottom: 48px; }
+.topbar__home { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); text-decoration: none; }
+.topbar__home:hover { color: var(--signal); }
+.topbar__sep { color: var(--border-strong); }
+.topbar__page { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-faint); }
+
+/* Actions bar */
+.actions { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+.btn-print { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--abyss); background: var(--signal); padding: 10px 18px; border: none; border-radius: 2px; cursor: pointer; }
+.btn-print:hover { background: var(--link-hover); }
+.edit-note { font-size: 12px; color: var(--fg-faint); font-family: var(--font-mono); }
+
+/* Document */
+.doc { background: var(--night-elev-1); border: 1px solid var(--border); border-radius: 4px; padding: 48px 52px; }
+
+/* Document header */
+.doc-header { border-bottom: 2px solid var(--fg); padding-bottom: 24px; margin-bottom: 32px; }
+.doc-header__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--signal); margin-bottom: 8px; }
+.doc-header__title { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); margin-bottom: 4px; }
+.doc-header__sub { font-size: 13px; color: var(--fg-muted); }
+
+/* Party block */
+.parties { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.party-card { background: var(--abyss); border: 1px solid var(--border); border-radius: 3px; padding: 20px; }
+.party-card__role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 10px; }
+.party-card__name { font-size: 14px; font-weight: 600; color: var(--fg); margin-bottom: 2px; }
+.party-card .editable { border-bottom: 1px dashed var(--border-strong); color: var(--signal); outline: none; min-width: 40px; }
+.party-card .editable:focus { background: rgba(111,227,209,0.06); border-radius: 2px; }
+
+/* Articles */
+.article { margin-bottom: 28px; }
+.article__title { font-size: 13px; font-weight: 600; color: var(--fg); margin-bottom: 10px; border-bottom: 1px solid var(--border-hairline); padding-bottom: 6px; }
+.article p { font-size: 13px; color: var(--fg-muted); margin-bottom: 10px; line-height: 1.7; }
+.article p:last-child { margin-bottom: 0; }
+.article ol { list-style: decimal; padding-left: 20px; }
+.article ol li { font-size: 13px; color: var(--fg-muted); margin-bottom: 8px; line-height: 1.65; }
+.article ul { list-style: disc; padding-left: 20px; }
+.article ul li { font-size: 13px; color: var(--fg-muted); margin-bottom: 6px; line-height: 1.6; }
+.article strong { color: var(--fg); }
+
+/* Section heading */
+.section-head { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--signal); margin: 36px 0 16px; border-top: 1px solid var(--border-hairline); padding-top: 24px; }
+
+/* Signature block */
+.sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 16px; }
+.sig-block { border-top: 1px solid var(--border); padding-top: 12px; }
+.sig-block__party { font-size: 12px; font-weight: 600; color: var(--fg); margin-bottom: 2px; }
+.sig-block__role { font-size: 11px; color: var(--fg-subtle); font-family: var(--font-mono); margin-bottom: 20px; }
+.sig-block__label { font-size: 11px; color: var(--fg-faint); font-family: var(--font-mono); letter-spacing: 0.08em; }
+.sig-block__field { border-bottom: 1px solid var(--border-strong); margin-bottom: 16px; height: 28px; }
+.sig-block .editable { border-bottom: 1px dashed var(--border-strong); color: var(--signal); outline: none; min-width: 40px; }
+.sig-block .editable:focus { background: rgba(111,227,209,0.06); border-radius: 2px; }
+
+/* Annexe */
+.annex { background: var(--abyss); border: 1px solid var(--border); border-radius: 3px; padding: 20px; margin-top: 8px; }
+.annex__title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 12px; }
+.annex table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.annex th { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--fg-faint); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+.annex td { padding: 8px 10px; border-bottom: 1px solid var(--border-hairline); color: var(--fg-muted); vertical-align: top; }
+.annex td:first-child { color: var(--fg); }
+.annex td .editable { border-bottom: 1px dashed var(--border-strong); color: var(--signal); outline: none; min-width: 60px; }
+
+footer.doc-footer { margin-top: 64px; padding: 24px 0; border-top: 1px solid var(--border-hairline); font-family: var(--font-mono); font-size: 10px; color: var(--fg-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 680px) {
+  .wrap { padding: 0 20px 60px; }
+  .doc { padding: 32px 24px; }
+  .parties { grid-template-columns: 1fr; }
+  .sig-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Print (A4) ── */
+@media print {
+  @page { size: A4; margin: 20mm 22mm 18mm 22mm; }
+
+  body { background: #fff !important; color: #1a1a1a !important; }
+  body::before { display: none !important; }
+
+  .topbar, .actions { display: none !important; }
+
+  .wrap { max-width: 100%; padding: 0; }
+
+  .doc {
+    background: #fff !important; border: none !important;
+    padding: 0; border-radius: 0;
+  }
+
+  .doc-header { border-bottom-color: #1a1a1a !important; }
+  .doc-header__label { color: #2d7a6a !important; }
+  .doc-header__title { color: #1a1a1a !important; font-size: 20px !important; }
+  .doc-header__sub { color: #555 !important; }
+
+  .party-card { background: #f7f8fc !important; border-color: #dde !important; }
+  .party-card__role { color: #777 !important; }
+  .party-card__name { color: #1a1a1a !important; }
+  .party-card .editable { color: #1a1a1a !important; border-bottom-color: #aaa !important; }
+
+  .section-head { color: #2d7a6a !important; border-top-color: #dde !important; }
+  .article__title { color: #1a1a1a !important; border-bottom-color: #dde !important; }
+  .article p, .article ol li, .article ul li { color: #333 !important; }
+  .article strong { color: #1a1a1a !important; }
+
+  .sig-block { border-top-color: #1a1a1a !important; }
+  .sig-block__field { border-bottom-color: #888 !important; }
+  .sig-block .editable { color: #1a1a1a !important; }
+
+  .annex { background: #f7f8fc !important; border-color: #dde !important; }
+  .annex th { color: #777 !important; border-bottom-color: #dde !important; }
+  .annex td { color: #333 !important; border-bottom-color: #eee !important; }
+  .annex td:first-child { color: #1a1a1a !important; }
+  .annex td .editable { color: #1a1a1a !important; border-bottom-color: #aaa !important; }
+
+  footer.doc-footer { color: #888 !important; border-top-color: #dde !important; }
+
+  .article { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="/trust" class="topbar__home">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Trust &amp; Privacy
+    </a>
+    <span class="topbar__sep">/</span>
+    <span class="topbar__page">VOK Template</span>
+  </div>
+
+  <div class="actions">
+    <button class="btn-print" onclick="window.print()" type="button">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Afdrukken / Opslaan als PDF
+    </button>
+    <span class="edit-note">// Klik op een blauw veld om het in te vullen vóór het afdrukken</span>
+  </div>
+
+  <div class="doc">
+
+    <div class="doc-header">
+      <div class="doc-header__label">// Lake-Project · VOK template</div>
+      <div class="doc-header__title">Verwerkersovereenkomst</div>
+      <div class="doc-header__sub">Gegevensverwerkingsovereenkomst als bedoeld in artikel 28 lid 3 AVG/GDPR</div>
+    </div>
+
+    <!-- Parties -->
+    <div class="parties">
+      <div class="party-card">
+        <div class="party-card__role">Verwerkingsverantwoordelijke</div>
+        <div class="party-card__name"><span class="editable" contenteditable="true" title="Vul de bedrijfsnaam in">[Bedrijfsnaam Opdrachtgever]</span></div>
+        <div style="font-size:12px;color:var(--fg-muted);margin-top:8px;line-height:1.8">
+          Adres: <span class="editable" contenteditable="true">[Adres]</span><br>
+          KvK: <span class="editable" contenteditable="true">[KvK-nummer]</span><br>
+          Contactpersoon: <span class="editable" contenteditable="true">[Naam contactpersoon]</span><br>
+          E-mail: <span class="editable" contenteditable="true">[E-mailadres]</span>
+        </div>
+        <div style="font-size:11px;color:var(--fg-faint);margin-top:10px;font-family:var(--font-mono)">hierna: "Verwerkingsverantwoordelijke"</div>
+      </div>
+      <div class="party-card">
+        <div class="party-card__role">Verwerker</div>
+        <div class="party-card__name">Lake Project</div>
+        <div style="font-size:12px;color:var(--fg-muted);margin-top:8px;line-height:1.8">
+          Handelsnaam: Lake-Project<br>
+          KvK: 29816688 · Rotterdam, Nederland<br>
+          Vertegenwoordigd door: Alexander van der Plas<br>
+          E-mail: hello@lake-project.com
+        </div>
+        <div style="font-size:11px;color:var(--fg-faint);margin-top:10px;font-family:var(--font-mono)">hierna: "Verwerker"</div>
+      </div>
+    </div>
+
+    <p style="font-size:13px;color:var(--fg-muted);margin-bottom:24px;line-height:1.7">
+      Samen hierna ook aangeduid als <strong>"Partijen"</strong>. Gesloten te <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[Plaats]</span>, op <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[Datum]</span>.
+    </p>
+
+    <!-- Preamble -->
+    <div class="section-head">Overwegingen</div>
+    <div class="article">
+      <p>Verwerkingsverantwoordelijke heeft Verwerker opdracht gegeven tot het verrichten van de volgende dienstverlening: <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[beschrijving dienstverlening, bijv. "advisering inzake contractstructurering en de bijbehorende toegang tot het klantportaal van Lake-Project"]</span> (hierna: de <strong>"Diensten"</strong>), zoals nader omschreven in de tussen Partijen gesloten opdracht/overeenkomst van <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[datum overeenkomst]</span> (de <strong>"Hoofdovereenkomst"</strong>).</p>
+      <p>In het kader van de uitvoering van de Diensten verwerkt Verwerker persoonsgegevens namens Verwerkingsverantwoordelijke. Partijen wensen de voorwaarden voor deze verwerking in de onderhavige verwerkersovereenkomst (de <strong>"VOK"</strong>) vast te leggen, overeenkomstig art. 28 lid 3 van de Algemene Verordening Gegevensbescherming (EU) 2016/679 (<strong>"AVG"</strong>).</p>
+    </div>
+
+    <!-- Article 1 -->
+    <div class="section-head">Artikelen</div>
+
+    <div class="article">
+      <div class="article__title">Artikel 1 — Definities</div>
+      <p>In deze VOK hebben de begrippen die in de AVG zijn gedefinieerd dezelfde betekenis als in de AVG. Voorts gelden de volgende definities:</p>
+      <ol>
+        <li><strong>Persoonsgegevens:</strong> alle informatie over een geïdentificeerde of identificeerbare natuurlijke persoon, zoals nader omschreven in Bijlage A.</li>
+        <li><strong>Betrokkene:</strong> de natuurlijke persoon op wie de persoonsgegevens betrekking hebben.</li>
+        <li><strong>Datalek:</strong> een inbreuk in verband met persoonsgegevens als bedoeld in art. 4 lid 12 AVG.</li>
+        <li><strong>Sub-verwerker:</strong> een derde partij die door Verwerker wordt ingeschakeld voor de verwerking van persoonsgegevens namens Verwerkingsverantwoordelijke, zoals vermeld in Bijlage B.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 2 — Reikwijdte en doel van de verwerking</div>
+      <ol>
+        <li>Verwerker verwerkt persoonsgegevens uitsluitend ten behoeve van de uitvoering van de Diensten en conform de in Bijlage A opgenomen specificatie.</li>
+        <li>Verwerker verwerkt de persoonsgegevens niet voor eigen doeleinden of andere doeleinden dan zoals door Verwerkingsverantwoordelijke schriftelijk is opgedragen.</li>
+        <li>Verwerker verwerkt de persoonsgegevens in de Europese Economische Ruimte (EER), tenzij Verwerkingsverantwoordelijke schriftelijk toestemming geeft voor verwerking buiten de EER. Voor gebruik van sub-verwerkers buiten de EER zijn passende waarborgen van kracht conform artikel 46 AVG (standaardcontractbepalingen).</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 3 — Instructies van Verwerkingsverantwoordelijke</div>
+      <ol>
+        <li>Verwerker verwerkt persoonsgegevens uitsluitend op basis van gedocumenteerde instructies van Verwerkingsverantwoordelijke, tenzij een Unierechtelijke of lidstaatrechtelijke bepaling Verwerker verplicht tot verdere verwerking. In dat geval stelt Verwerker Verwerkingsverantwoordelijke vóór de verwerking in kennis van die wettelijke verplichting, tenzij dat wettelijk verboden is.</li>
+        <li>De Hoofdovereenkomst en deze VOK gelden als gedocumenteerde instructie.</li>
+        <li>Verwerker deelt Verwerkingsverantwoordelijke onverwijld mede als naar zijn oordeel een instructie inbreuk maakt op de AVG of andere toepasselijke privacywetgeving.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 4 — Vertrouwelijkheid</div>
+      <ol>
+        <li>Verwerker waarborgt dat personen die gemachtigd zijn de persoonsgegevens te verwerken, deze vertrouwelijk behandelen en daartoe gebonden zijn door een wettelijke of contractuele geheimhoudingsplicht.</li>
+        <li>Verwerker beperkt de toegang tot persoonsgegevens tot die personen voor wie toegang noodzakelijk is voor de uitvoering van de Diensten.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 5 — Beveiliging (technische en organisatorische maatregelen)</div>
+      <ol>
+        <li>Verwerker treft passende technische en organisatorische maatregelen om een beveiligingsniveau te waarborgen dat is afgestemd op het risico, waaronder:
+          <ul style="margin-top:8px">
+            <li>versleuteling van persoonsgegevens in rust en tijdens transport (TLS 1.2+);</li>
+            <li>toegangsbeveiliging op basis van het principe van minimale rechten;</li>
+            <li>gebruik van meertrapsauthenticatie (passkeys / MFA) voor systemen die persoonsgegevens bevatten;</li>
+            <li>patchbeheer: kritieke beveiligingsupdates worden binnen 30 dagen toegepast;</li>
+            <li>periodieke back-ups en gedocumenteerde herstelprocedures.</li>
+          </ul>
+        </li>
+        <li>Een overzicht van de genomen maatregelen is op verzoek beschikbaar. Verwerker voert op verzoek en ten minste eenmaal per jaar een interne beoordeling uit van de effectiviteit van de maatregelen.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 6 — Sub-verwerkers</div>
+      <ol>
+        <li>Verwerkingsverantwoordelijke verleent Verwerker hierbij algemene toestemming om de in Bijlage B genoemde sub-verwerkers in te schakelen.</li>
+        <li>Verwerker legt aan sub-verwerkers gelijkwaardige verplichtingen op als die welke in deze VOK zijn neergelegd. Verwerker blijft jegens Verwerkingsverantwoordelijke volledig aansprakelijk voor de naleving door sub-verwerkers.</li>
+        <li>Verwerker stelt Verwerkingsverantwoordelijke minimaal 30 dagen vóór het inschakelen van een nieuwe sub-verwerker schriftelijk op de hoogte. Verwerkingsverantwoordelijke kan binnen 14 dagen na kennisgeving schriftelijk bezwaar maken; in dat geval treden Partijen in overleg over een passende oplossing.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 7 — Rechten van betrokkenen</div>
+      <ol>
+        <li>Verwerker assisteert Verwerkingsverantwoordelijke door passende technische en organisatorische maatregelen bij het vervullen van de plicht om verzoeken om uitoefening van de rechten van betrokkenen (art. 15–22 AVG) te beantwoorden.</li>
+        <li>Verwerker stuurt verzoeken van betrokkenen die rechtstreeks bij Verwerker worden ingediend, onverwijld door naar Verwerkingsverantwoordelijke.</li>
+        <li>Verwerker beantwoordt dergelijke verzoeken niet zelfstandig zonder voorafgaande instructie van Verwerkingsverantwoordelijke, tenzij wettelijk verplicht.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 8 — Meldplicht datalekken</div>
+      <ol>
+        <li>Verwerker stelt Verwerkingsverantwoordelijke onverwijld en uiterlijk <strong>24 uur</strong> na ontdekking op de hoogte van een (vermoedelijk) datalek dat betrekking heeft op de verwerkte persoonsgegevens.</li>
+        <li>De melding bevat ten minste: de aard van het datalek, de categorieën en het (geschatte) aantal betrokkenen en persoonsgegevensrecords, de waarschijnlijke gevolgen, en de genomen of voorgestelde maatregelen.</li>
+        <li>Verwerker verleent Verwerkingsverantwoordelijke alle medewerking die nodig is voor eventuele melding bij de Autoriteit Persoonsgegevens (art. 33 AVG) en kennisgeving aan betrokkenen (art. 34 AVG).</li>
+        <li>Verwerker houdt een intern register bij van alle datalekken.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 9 — Audit en aantoonbaarheid</div>
+      <ol>
+        <li>Verwerker stelt aan Verwerkingsverantwoordelijke alle informatie beschikbaar die nodig is om de nakoming van de verplichtingen in deze VOK aan te tonen.</li>
+        <li>Verwerkingsverantwoordelijke of een door hem aangestelde auditor heeft het recht om, na minimaal 30 dagen schriftelijke vooraankondiging en op kosten van Verwerkingsverantwoordelijke, audits of inspecties uit te voeren. Partijen kunnen overeenkomen dat een audit via schriftelijke vragenlijst plaatsvindt.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 10 — Teruggave en verwijdering van persoonsgegevens</div>
+      <ol>
+        <li>Na beëindiging van de Diensten verwijdert of retourneert Verwerker — naar keuze van Verwerkingsverantwoordelijke — alle persoonsgegevens en verwijdert bestaande kopieën, tenzij een wettelijke bewaarplicht anders vereist.</li>
+        <li>Verwerker bevestigt schriftelijk de verwijdering binnen 30 dagen na beëindiging van de Diensten.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 11 — Duur en beëindiging</div>
+      <ol>
+        <li>Deze VOK treedt in werking op de datum van ondertekening en loopt parallel met de Hoofdovereenkomst.</li>
+        <li>Bij beëindiging van de Hoofdovereenkomst eindigt ook deze VOK, onverminderd artikel 10 (teruggave en verwijdering) en enige bepaling waarvan de strekking meebrengt dat zij voortduurt na beëindiging.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 12 — Aansprakelijkheid</div>
+      <ol>
+        <li>De aansprakelijkheidsregeling in de Hoofdovereenkomst is van overeenkomstige toepassing op schade die voortvloeit uit een schending van deze VOK, voor zover de AVG dit toestaat.</li>
+        <li>Iedere Partij is aansprakelijk voor schade die zij veroorzaakt door schending van de op haar rustende AVG-verplichtingen. Partijen kunnen hun onderlinge aansprakelijkheid beperken overeenkomstig de Hoofdovereenkomst, met dien verstande dat de aansprakelijkheid jegens betrokkenen niet wordt beperkt.</li>
+      </ol>
+    </div>
+
+    <div class="article">
+      <div class="article__title">Artikel 13 — Toepasselijk recht en bevoegde rechter</div>
+      <ol>
+        <li>Op deze VOK is Nederlands recht van toepassing.</li>
+        <li>Geschillen die voortvloeien uit of verband houden met deze VOK worden voorgelegd aan de bevoegde rechter te Rotterdam, Nederland, tenzij dwingende wettelijke bepalingen anders voorschrijven.</li>
+      </ol>
+    </div>
+
+    <!-- Signatures -->
+    <div class="section-head">Ondertekening</div>
+    <p style="font-size:13px;color:var(--fg-muted);margin-bottom:20px">Aldus overeengekomen en in tweevoud ondertekend te <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[Plaats]</span> op <span class="editable" contenteditable="true" style="border-bottom:1px dashed var(--border-strong);color:var(--signal);outline:none">[Datum]</span>.</p>
+
+    <div class="sig-grid">
+      <div class="sig-block">
+        <div class="sig-block__party">Verwerkingsverantwoordelijke</div>
+        <div class="sig-block__role"><span class="editable" contenteditable="true">[Bedrijfsnaam Opdrachtgever]</span></div>
+        <div class="sig-block__label">Handtekening</div>
+        <div class="sig-block__field"></div>
+        <div class="sig-block__label">Naam</div>
+        <div class="sig-block__field"></div>
+        <div class="sig-block__label">Functie</div>
+        <div class="sig-block__field"></div>
+        <div class="sig-block__label">Datum</div>
+        <div class="sig-block__field"></div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-block__party">Verwerker</div>
+        <div class="sig-block__role">Lake Project (Lake-Project)</div>
+        <div class="sig-block__label">Handtekening</div>
+        <div class="sig-block__field"></div>
+        <div class="sig-block__label">Naam</div>
+        <div class="sig-block__field" style="border-bottom-color:var(--fg-faint)"><span style="font-size:12px;color:var(--fg-muted)">Alexander van der Plas</span></div>
+        <div class="sig-block__label">Functie</div>
+        <div class="sig-block__field" style="border-bottom-color:var(--fg-faint)"><span style="font-size:12px;color:var(--fg-muted)">Eigenaar / Verwerkingsverantwoordelijke</span></div>
+        <div class="sig-block__label">Datum</div>
+        <div class="sig-block__field"></div>
+      </div>
+    </div>
+
+    <!-- Bijlage A -->
+    <div class="section-head">Bijlage A — Specificatie verwerking</div>
+    <p style="font-size:13px;color:var(--fg-muted);margin-bottom:16px">Onderstaande tabel beschrijft de persoonsgegevens die in het kader van de Diensten worden verwerkt.</p>
+    <div class="annex">
+      <div class="annex__title">Verwerkingsspecificatie</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Categorie persoonsgegevens</th>
+            <th>Doel</th>
+            <th>Betrokkenen</th>
+            <th>Bewaartermijn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Naam, e-mailadres, telefoonnummer contactpersoon</td>
+            <td>Portaaltoegang, communicatie, facturering</td>
+            <td>Contactpersonen Verwerkingsverantwoordelijke</td>
+            <td>Duur overeenkomst + 7 jaar (AWR)</td>
+          </tr>
+          <tr>
+            <td>Bedrijfsgegevens (naam, adres, KvK, BTW-nr)</td>
+            <td>Facturering en administratie</td>
+            <td>Rechtspersoon Verwerkingsverantwoordelijke</td>
+            <td>7 jaar na boekjaar (AWR art. 52)</td>
+          </tr>
+          <tr>
+            <td><span class="editable" contenteditable="true">[Eventuele aanvullende categorieën]</span></td>
+            <td><span class="editable" contenteditable="true">[Doel]</span></td>
+            <td><span class="editable" contenteditable="true">[Betrokkenen]</span></td>
+            <td><span class="editable" contenteditable="true">[Termijn]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bijlage B -->
+    <div class="section-head">Bijlage B — Sub-verwerkers</div>
+    <p style="font-size:13px;color:var(--fg-muted);margin-bottom:16px">De volgende sub-verwerkers worden ingeschakeld bij de uitvoering van de Diensten. Met alle sub-verwerkers zijn passende verwerkersovereenkomsten gesloten en zijn EU Standard Contractual Clauses (SCCs) van kracht.</p>
+    <div class="annex">
+      <div class="annex__title">Lijst sub-verwerkers (per <span id="vok-date"></span>)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-verwerker</th>
+            <th>Land</th>
+            <th>Rol / dienst</th>
+            <th>Waarborg buiten EER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloudflare, Inc.</td>
+            <td>VS (EER-routing)</td>
+            <td>Hosting (Pages), database (D1), bestandsopslag (R2), DDoS-bescherming, Turnstile spam­beveiliging</td>
+            <td>EU SCCs + Cloudflare DPA</td>
+          </tr>
+          <tr>
+            <td>Resend (WorkOS, Inc.)</td>
+            <td>VS</td>
+            <td>Transactionele e-mailbezorging</td>
+            <td>EU SCCs + Resend DPA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /.doc -->
+
+  <footer class="doc-footer">
+    <span>Lake-Project · VOK template · Art. 28 AVG/GDPR</span>
+    <span>lake-project.com/trust/vok · Gegenereerd <span id="vok-date2"></span></span>
+  </footer>
+
+</div>
+
+<script>
+const d = new Date().toLocaleDateString('nl-NL', {day:'2-digit',month:'long',year:'numeric'});
+document.querySelectorAll('#vok-date,#vok-date2').forEach(el => { el.textContent = d; });
+</script>
+</body>
+</html>

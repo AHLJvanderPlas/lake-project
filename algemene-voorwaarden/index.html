@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algemene Voorwaarden — Lake-Project</title>
+<meta name="description" content="Algemene leveringsvoorwaarden van Lake Project (Lake-Project), Rotterdam. KvK 29816688." />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+<style>
+/* ─── tokens ─────────────────────────────────────────── */
+:root {
+  --abyss:   #0B1117;
+  --canvas:  #111822;
+  --elev1:   #161e2a;
+  --elev2:   #1b2535;
+  --border:  rgba(111,227,209,.12);
+  --signal:  #6FE3D1;
+  --fg:      #E8EDF2;
+  --fg-m:    #8B99AA;
+  --fg-s:    #5a6672;
+  --mono:    'Menlo','Consolas','Monaco',monospace;
+  --sans:    system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+
+/* ─── reset ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--abyss);color:var(--fg);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--signal);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ─── topbar ──────────────────────────────────────────── */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(11,17,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.topbar-logo{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--fg)}
+.topbar-logo span{color:var(--signal)}
+.topbar-back{font-family:var(--mono);font-size:11px;color:var(--fg-s);letter-spacing:.08em;display:flex;align-items:center;gap:6px}
+.topbar-back:hover{color:var(--signal);text-decoration:none}
+
+/* ─── layout ──────────────────────────────────────────── */
+.av-wrap{display:grid;grid-template-columns:220px 1fr;gap:0;max-width:960px;margin:0 auto;padding:0 24px 64px}
+@media(max-width:700px){.av-wrap{grid-template-columns:1fr}.av-sidebar{display:none}}
+
+/* ─── sidebar ─────────────────────────────────────────── */
+.av-sidebar{position:sticky;top:68px;height:calc(100vh - 80px);overflow-y:auto;padding:32px 0 32px 0;scrollbar-width:none}
+.av-sidebar::-webkit-scrollbar{display:none}
+.av-sidebar-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-s);margin-bottom:10px;padding-left:2px}
+.av-nav-link{display:block;font-size:11.5px;color:var(--fg-s);padding:5px 10px 5px 2px;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--mono);letter-spacing:.03em}
+.av-nav-link:hover{color:var(--fg);text-decoration:none}
+.av-nav-link.is-active{color:var(--signal);border-left-color:var(--signal)}
+
+/* ─── main ────────────────────────────────────────────── */
+.av-main{padding:40px 0 0 48px}
+@media(max-width:700px){.av-main{padding:32px 0 0}}
+
+/* ─── hero ────────────────────────────────────────────── */
+.av-hero{margin-bottom:40px}
+.av-hero__eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px}
+.av-hero__title{font-size:clamp(22px,4vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.av-hero__meta{font-family:var(--mono);font-size:11px;color:var(--fg-s);line-height:1.8}
+.av-hero__updated{font-family:var(--mono);font-size:10px;color:var(--fg-s);margin-top:6px;letter-spacing:.05em}
+.av-print-btn{margin-top:16px;display:inline-flex;align-items:center;gap:7px;padding:8px 16px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--fg-m);font-family:var(--mono);font-size:11px;letter-spacing:.06em;cursor:pointer;transition:all .15s}
+.av-print-btn:hover{border-color:var(--signal);color:var(--signal)}
+.av-print-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── sections ────────────────────────────────────────── */
+.av-section{padding-top:48px;margin-top:0;border-top:1px solid var(--border)}
+.av-section:first-of-type{border-top:none;padding-top:0}
+.av-section__label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--signal);margin-bottom:8px}
+.av-section__title{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px;color:var(--fg)}
+.av-section__body{font-size:14px;color:var(--fg-m);line-height:1.75}
+.av-section__body p{margin-bottom:10px}
+.av-section__body ol,.av-section__body ul{padding-left:20px;margin-bottom:10px}
+.av-section__body li{margin-bottom:6px}
+.av-section__body strong{color:var(--fg);font-weight:600}
+
+/* ─── highlight box ───────────────────────────────────── */
+.av-highlight{background:var(--elev1);border:1px solid var(--border);border-left:3px solid var(--signal);border-radius:4px;padding:16px 20px;margin-bottom:32px}
+.av-highlight p{font-size:13px;color:var(--fg-m);line-height:1.7;margin:0}
+.av-highlight strong{color:var(--fg)}
+
+/* ─── footer ──────────────────────────────────────────── */
+.av-footer-note{margin-top:56px;padding-top:24px;border-top:1px solid var(--border);font-family:var(--mono);font-size:11px;color:var(--fg-s);line-height:1.9}
+
+/* ─── print ───────────────────────────────────────────── */
+.print-header{display:none}
+@media print {
+  @page{size:A4;margin:18mm 22mm 16mm 22mm}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff!important;color:#1a1a1a!important;font-family:system-ui,-apple-system,sans-serif;font-size:9pt}
+  .topbar,.av-sidebar,.av-print-btn{display:none!important}
+  .print-header{display:block;border-bottom:2pt solid #0B1117;padding-bottom:10px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:flex-end}
+  .print-header h1{font-size:15pt;color:#0B1117;margin:0}
+  .print-header .ph-meta{font-size:7pt;font-family:monospace;color:#777;text-align:right;line-height:1.7}
+  .av-wrap{display:block;max-width:100%;padding:0}
+  .av-main{padding:0}
+  .av-hero__eyebrow,.av-hero__updated{color:#2d7a6a!important}
+  .av-hero__title{font-size:14pt;color:#0B1117!important}
+  .av-hero__meta,.av-footer-note{color:#555!important;font-size:7.5pt}
+  .av-highlight{background:#f8faf8!important;border-left:3pt solid #2d7a6a!important;border-color:#dde!important}
+  .av-highlight p{color:#333!important;font-size:8pt}
+  .av-section{border-top-color:#dde!important;page-break-inside:avoid}
+  .av-section__label{color:#2d7a6a!important}
+  .av-section__title{color:#0B1117!important;font-size:10pt}
+  .av-section__body{color:#333!important;font-size:8.5pt}
+  .av-section__body strong{color:#0B1117!important}
+  .av-hero{margin-bottom:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="print-header">
+  <div>
+    <div style="font-size:7pt;font-family:monospace;color:#777">Lake Project · KvK 29816688 · Rotterdam, Nederland · lake-project.com</div>
+    <h1>Algemene Voorwaarden</h1>
+    <div style="font-size:7pt;font-family:monospace;color:#999">Versie 2026-07-16 · Gegenereerd <span id="print-date"></span></div>
+  </div>
+</div>
+
+<div class="topbar">
+  <span class="topbar-logo">LAKE<span>PROJECT</span></span>
+  <a href="/" class="topbar-back">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    lake-project.com
+  </a>
+</div>
+
+<div class="av-wrap">
+  <!-- sidebar -->
+  <aside class="av-sidebar">
+    <div class="av-sidebar-label">Inhoud</div>
+    <a href="#toepasselijkheid"  class="av-nav-link">1. Toepasselijkheid</a>
+    <a href="#aanbod"            class="av-nav-link">2. Aanbod &amp; aanvaarding</a>
+    <a href="#uitvoering"        class="av-nav-link">3. Uitvoering</a>
+    <a href="#wijzigingen"       class="av-nav-link">4. Wijzigingen &amp; meerwerk</a>
+    <a href="#ip"                class="av-nav-link">5. Intellectueel eigendom</a>
+    <a href="#vertrouwelijkheid" class="av-nav-link">6. Vertrouwelijkheid</a>
+    <a href="#betaling"          class="av-nav-link">7. Betaling</a>
+    <a href="#aansprakelijkheid" class="av-nav-link">8. Aansprakelijkheid</a>
+    <a href="#overmacht"         class="av-nav-link">9. Overmacht</a>
+    <a href="#opzegging"         class="av-nav-link">10. Opzegging</a>
+    <a href="#klachten"          class="av-nav-link">11. Klachten</a>
+    <a href="#recht"             class="av-nav-link">12. Toepasselijk recht</a>
+  </aside>
+
+  <!-- main -->
+  <main class="av-main">
+    <div class="av-hero">
+      <div class="av-hero__eyebrow">Lake-Project · KvK 29816688</div>
+      <h1 class="av-hero__title">Algemene Voorwaarden</h1>
+      <div class="av-hero__meta">
+        Van toepassing op alle diensten en overeenkomsten van Lake Project<br>
+        (handelend onder de naam Lake-Project), Rotterdam, Nederland.<br>
+        KvK 29816688 · BTW NL001170142B85
+      </div>
+      <div class="av-hero__updated">Versie 2026-07-16</div>
+      <button class="av-print-btn" type="button" onclick="window.print()">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Afdrukken / Opslaan als PDF (A4)
+      </button>
+    </div>
+
+    <div class="av-highlight">
+      <p>
+        <strong>Kernpunten:</strong> Betaling binnen 30 dagen · Wettelijke handelsrente bij te late betaling ·
+        IE-overdracht na volledige betaling · Aansprakelijkheid beperkt tot factuurbedrag ·
+        Rotterdam als bevoegde rechter · Nederlands recht van toepassing.
+        Bij strijdigheid met de voorwaarden van opdrachtgever prevaleren deze AV.
+      </p>
+    </div>
+
+    <!-- Article 1 -->
+    <section class="av-section" id="toepasselijkheid">
+      <div class="av-section__label">Artikel 1</div>
+      <h2 class="av-section__title">Toepasselijkheid</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes en overeenkomsten van Lake Project (handelend onder de naam <strong>Lake-Project</strong>), gevestigd te Rotterdam, ingeschreven bij de Kamer van Koophandel onder nummer <strong>29816688</strong>.</li>
+          <li>Afwijkingen van deze voorwaarden zijn slechts geldig indien uitdrukkelijk en schriftelijk overeengekomen. De toepasselijkheid van eventuele inkoop- of andere voorwaarden van de opdrachtgever wordt uitdrukkelijk van de hand gewezen.</li>
+          <li>Indien enige bepaling van deze voorwaarden nietig is of vernietigd wordt, blijven de overige bepalingen onverminderd van kracht. Partijen treden in overleg over een vervangende bepaling die zoveel mogelijk de strekking van de nietige bepaling benadert.</li>
+          <li>Lake-Project behoudt het recht deze algemene voorwaarden te wijzigen. De meest actuele versie is gepubliceerd op <strong>lake-project.com/algemene-voorwaarden</strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 2 -->
+    <section class="av-section" id="aanbod">
+      <div class="av-section__label">Artikel 2</div>
+      <h2 class="av-section__title">Aanbod en aanvaarding</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Alle aanbiedingen en offertes van Lake-Project zijn vrijblijvend, tenzij daarin uitdrukkelijk een termijn voor aanvaarding is gesteld. Een offerte vervalt na <strong>30 dagen</strong>, tenzij anders vermeld.</li>
+          <li>Een overeenkomst komt tot stand op het moment dat Lake-Project een schriftelijke of elektronische opdrachtbevestiging heeft verzonden, dan wel met de uitvoering van de opdracht is aangevangen.</li>
+          <li>Kennelijke fouten of vergissingen in het aanbod binden Lake-Project niet.</li>
+          <li>Mondelinge afspraken binden Lake-Project slechts nadat deze schriftelijk zijn bevestigd.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 3 -->
+    <section class="av-section" id="uitvoering">
+      <div class="av-section__label">Artikel 3</div>
+      <h2 class="av-section__title">Uitvoering van de opdracht</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Lake-Project voert de opdracht naar beste inzicht en vermogen uit overeenkomstig de eisen van goed vakmanschap. Tenzij uitdrukkelijk schriftelijk anders is overeengekomen, gaat het om een <strong>inspanningsverplichting</strong> en geen resultaatsverplichting.</li>
+          <li>Opdrachtgever draagt zorg voor tijdige aanlevering van alle informatie, materialen en medewerking die redelijkerwijs noodzakelijk zijn voor de uitvoering van de opdracht. Vertraging of schade die voortvloeit uit het uitblijven of laattijdig verstrekken hiervan, komt voor rekening en risico van opdrachtgever.</li>
+          <li>Lake-Project is gerechtigd bepaalde werkzaamheden, zonder voorafgaande toestemming van opdrachtgever, te laten uitvoeren door derden, mits dit geen afbreuk doet aan de kwaliteit en vertrouwelijkheid van de opdracht.</li>
+          <li>Opgegeven levertijden zijn indicatief. Overschrijding ervan geeft opdrachtgever geen recht op schadevergoeding of ontbinding, tenzij een fatale termijn uitdrukkelijk schriftelijk is overeengekomen.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 4 -->
+    <section class="av-section" id="wijzigingen">
+      <div class="av-section__label">Artikel 4</div>
+      <h2 class="av-section__title">Wijzigingen en meerwerk</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Wijzigingen in of aanvullingen op de opdracht (meerwerk) dienen schriftelijk te worden overeengekomen voordat Lake-Project hiermee aanvangt.</li>
+          <li>Indien opdrachtgever tijdens de uitvoering verzoekt om aanvullende werkzaamheden buiten de oorspronkelijke opdracht, is Lake-Project gerechtigd daarvoor meerkosten in rekening te brengen tegen het op dat moment geldende uurtarief of een nader overeen te komen prijs.</li>
+          <li>Lake-Project informeert opdrachtgever zo spoedig mogelijk over de financiële en planningsgevolgen van een wijziging.</li>
+          <li>Kleine aanpassingen die gebruikelijk zijn in het kader van de opdracht en geen wezenlijke uitbreiding van de werkzaamheden vormen, worden niet als meerwerk aangemerkt.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 5 -->
+    <section class="av-section" id="ip">
+      <div class="av-section__label">Artikel 5</div>
+      <h2 class="av-section__title">Intellectueel eigendom</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Alle intellectuele eigendomsrechten op de door Lake-Project ontwikkelde of samengestelde werken — waaronder ontwerpen, code, teksten, documentatie en visuele identiteiten — berusten bij Lake-Project totdat opdrachtgever aan <strong>alle betalingsverplichtingen</strong> heeft voldaan.</li>
+          <li>Na volledige betaling draagt Lake-Project de intellectuele eigendomsrechten op de specifiek voor opdrachtgever ontwikkelde werken over aan opdrachtgever, voor zover de wet dit toelaat en voor zover dit uitdrukkelijk is overeengekomen. Rechten op gebruikte open-sourcebibliotheken, tools, frameworks of herbruikbare standaardcomponenten worden niet overgedragen.</li>
+          <li>Lake-Project behoudt te allen tijde het recht om de verrichte werkzaamheden en resulterende werken te gebruiken voor eigen promotiedoeleinden (portfolio, referenties), tenzij opdrachtgever daartegen schriftelijk bezwaar maakt bij of na aanvang van de opdracht.</li>
+          <li>Opdrachtgever vrijwaart Lake-Project voor aanspraken van derden met betrekking tot intellectuele eigendomsrechten op door opdrachtgever aangeleverde materialen of informatie.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 6 -->
+    <section class="av-section" id="vertrouwelijkheid">
+      <div class="av-section__label">Artikel 6</div>
+      <h2 class="av-section__title">Vertrouwelijkheid</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Beide partijen behandelen informatie die zij in het kader van de overeenkomst van de andere partij ontvangen en die als vertrouwelijk is aangemerkt of redelijkerwijs als zodanig moet worden beschouwd, als strikt vertrouwelijk. Deze informatie wordt niet aan derden verstrekt zonder voorafgaande schriftelijke toestemming.</li>
+          <li>De vertrouwelijkheidsplicht geldt niet voor informatie die (a) rechtmatig openbaar is of wordt zonder toedoen van de ontvangende partij, (b) reeds in bezit was van de ontvangende partij vóór ontvangst, of (c) een partij op grond van een wettelijke verplichting of rechterlijk bevel moet verstrekken.</li>
+          <li>De vertrouwelijkheidsplicht geldt ook na beëindiging van de overeenkomst, zolang de informatie niet rechtmatig openbaar is geworden.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 7 -->
+    <section class="av-section" id="betaling">
+      <div class="av-section__label">Artikel 7</div>
+      <h2 class="av-section__title">Betaling</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Facturen dienen te worden voldaan binnen <strong>30 dagen</strong> na factuurdatum, tenzij schriftelijk anders is overeengekomen.</li>
+          <li>Bij overschrijding van de betalingstermijn is opdrachtgever van rechtswege in verzuim en is de <strong>wettelijke handelsrente</strong> verschuldigd als bedoeld in art. 6:119a BW, te rekenen vanaf de vervaldatum tot de dag van algehele voldoening.</li>
+          <li>Alle buitengerechtelijke incassokosten die Lake-Project redelijkerwijs maakt ter invordering van een openstaande vordering, komen voor rekening van opdrachtgever.</li>
+          <li>Lake-Project heeft het recht werkzaamheden op te schorten of toegang tot opgeleverde resultaten te beperken zolang een openstaand bedrag niet volledig is voldaan, zonder dat dit een toerekenbare tekortkoming van Lake-Project oplevert.</li>
+          <li>Opdrachtgever is niet gerechtigd vorderingen op Lake-Project te verrekenen met betalingsverplichtingen, tenzij dit rechterlijk is vastgesteld of schriftelijk door Lake-Project is erkend.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 8 -->
+    <section class="av-section" id="aansprakelijkheid">
+      <div class="av-section__label">Artikel 8</div>
+      <h2 class="av-section__title">Aansprakelijkheid</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Lake-Project is slechts aansprakelijk voor directe schade die het rechtstreekse gevolg is van een aan Lake-Project toerekenbare tekortkoming in de nakoming van de overeenkomst.</li>
+          <li>De totale aansprakelijkheid van Lake-Project is in alle gevallen beperkt tot het bedrag dat door haar aansprakelijkheidsverzekering in het desbetreffende geval wordt uitgekeerd. Bij gebreke van een uitkering is de aansprakelijkheid beperkt tot het netto factuurbedrag van de desbetreffende opdracht over de <strong>laatste drie maanden</strong>, met een absoluut maximum van <strong>EUR 10.000</strong> per gebeurtenis of reeks samenhangende gebeurtenissen.</li>
+          <li>Lake-Project is nimmer aansprakelijk voor: indirecte schade, gevolgschade, gederfde winst, gemiste besparingen, verminderde goodwill, reputatieschade, of schade door bedrijfsstagnatie.</li>
+          <li>De aansprakelijkheidsbeperkingen in dit artikel gelden niet in geval van opzet of bewuste roekeloosheid van Lake-Project of haar leidinggevenden.</li>
+          <li>Opdrachtgever vrijwaart Lake-Project voor aanspraken van derden die verband houden met de uitvoering van de overeenkomst, voor zover die aanspraken niet toe te rekenen zijn aan Lake-Project.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 9 -->
+    <section class="av-section" id="overmacht">
+      <div class="av-section__label">Artikel 9</div>
+      <h2 class="av-section__title">Overmacht</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Lake-Project is niet gehouden tot nakoming van enige verplichting indien zij daartoe verhinderd wordt als gevolg van overmacht. Onder overmacht wordt onder meer verstaan: storingen bij toeleveranciers of sub-verwerkers, ziekte van de uitvoerend opdrachtnemer, overheidsmaatregelen, extreme weersomstandigheden, en andere van buiten komende oorzaken die redelijkerwijs niet te voorzien of te voorkomen waren.</li>
+          <li>Als de overmachtssituatie langer duurt dan <strong>30 aaneengesloten dagen</strong>, hebben beide partijen het recht de overeenkomst schriftelijk te ontbinden zonder dat daardoor een verplichting tot schadevergoeding ontstaat. Lake-Project ontvangt in dat geval betaling voor de reeds naar behoren verrichte werkzaamheden.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 10 -->
+    <section class="av-section" id="opzegging">
+      <div class="av-section__label">Artikel 10</div>
+      <h2 class="av-section__title">Opzegging en ontbinding</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Beide partijen kunnen een lopende overeenkomst voor onbepaalde tijd schriftelijk beëindigen met inachtneming van een opzegtermijn van <strong>30 dagen</strong>, tenzij schriftelijk een andere termijn is overeengekomen.</li>
+          <li>Bij tussentijdse opzegging door opdrachtgever is Lake-Project gerechtigd vergoeding te vorderen voor: (a) reeds verrichte werkzaamheden en gemaakte kosten, en (b) een redelijke vergoeding voor gederfde omzet als gevolg van de reeds ingeplande en gereserveerde capaciteit, op basis van het overeengekomen tarief.</li>
+          <li>Lake-Project heeft het recht de overeenkomst met onmiddellijke ingang te ontbinden, zonder rechterlijke tussenkomst en zonder schadeplichtig te zijn, indien opdrachtgever in surseance van betaling verkeert, faillissement is aangevraagd, of anderszins niet langer in staat moet worden geacht aan zijn verplichtingen te voldoen.</li>
+          <li>Reeds overeengekomen en geleverde deelresultaten worden bij beëindiging afzonderlijk gefactureerd voor zover van toepassing.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 11 -->
+    <section class="av-section" id="klachten">
+      <div class="av-section__label">Artikel 11</div>
+      <h2 class="av-section__title">Klachten</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Klachten over de uitvoering van de opdracht of de kwaliteit van de geleverde werkzaamheden dienen <strong>schriftelijk</strong> te worden gemeld bij Lake-Project binnen <strong>14 dagen</strong> na constatering van het gebrek, doch uiterlijk binnen <strong>30 dagen</strong> na (op)levering van de betreffende werkzaamheden of resultaten.</li>
+          <li>Klachten die niet binnen de gestelde termijn zijn ingediend, worden niet meer in behandeling genomen en opdrachtgever verliest zijn recht op herstel of vergoeding.</li>
+          <li>Tijdig ingediende en door Lake-Project gegrond bevonden klachten geven opdrachtgever het recht op herstel van het gebrek of, ter keuze van Lake-Project, creditering van het desbetreffende deel van de factuur.</li>
+          <li>Het indienen van een klacht schort de betalingsverplichting van opdrachtgever niet op.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article 12 -->
+    <section class="av-section" id="recht">
+      <div class="av-section__label">Artikel 12</div>
+      <h2 class="av-section__title">Toepasselijk recht en geschillen</h2>
+      <div class="av-section__body">
+        <ol>
+          <li>Op alle overeenkomsten gesloten met Lake-Project is uitsluitend <strong>Nederlands recht</strong> van toepassing.</li>
+          <li>Geschillen die voortvloeien uit of verband houden met een overeenkomst worden, voor zover wettelijk toegestaan, uitsluitend voorgelegd aan de bevoegde rechter in het <strong>arrondissement Rotterdam</strong>, Nederland.</li>
+          <li>Partijen streven ernaar geschillen in eerste instantie te beslechten door middel van onderling overleg. Indien partijen er niet in slagen het geschil in overleg op te lossen, staat de gang naar de rechter open.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="av-footer-note">
+      Lake Project · handelend onder de naam Lake-Project · KvK 29816688 · Rotterdam, Nederland<br>
+      Versie 2026-07-16 · <a href="/trust">Privacy &amp; legal</a> · <a href="/trust/vok">Verwerkersovereenkomst</a> · <a href="mailto:hello@lake-project.com">hello@lake-project.com</a>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  const pd = document.getElementById('print-date');
+  if (pd) pd.textContent = new Date().toLocaleDateString('nl-NL', { day: '2-digit', month: 'long', year: 'numeric' });
+
+  const links = document.querySelectorAll('.av-nav-link');
+  const sections = document.querySelectorAll('.av-section');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('is-active'));
+        const active = document.querySelector(`.av-nav-link[href="#${e.target.id}"]`);
+        if (active) active.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+</body>
+</html>

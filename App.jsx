@@ -1,11 +1,11 @@
-/* global React, ReactDOM, Header, Hero, Practice, Builder, Ventures, Resume, Contact, Footer */
+/* global React, ReactDOM, Header, Hero, Practice, Builder, Contact, Footer */
 const { useEffect, useState, useCallback } = React;
 
 function App() {
   const [active, setActive] = useState("top");
 
   useEffect(() => {
-    const ids = ["top", "practice", "ventures", "resume", "contact"];
+    const ids = ["top", "services", "work", "contact"];
     const els = ids.map((id) => document.getElementById(id)).filter(Boolean);
     if (!els.length) return;
 
@@ -38,13 +38,11 @@ function App() {
         <Hero onNav={onNav} />
         <Practice />
         <Builder />
-        <Ventures />
-        <Resume />
         <Contact />
       </main>
       <Footer />
       <nav className="lp-mobile-nav" aria-label="Mobile navigation">
-        {["practice", "ventures", "resume", "contact"].map((id) => (
+        {["services", "work", "contact"].map((id) => (
           <a
             key={id}
             href={`#${id}`}
@@ -54,6 +52,7 @@ function App() {
             {id}
           </a>
         ))}
+        <a href="/about">about</a>
       </nav>
     </div>
   );

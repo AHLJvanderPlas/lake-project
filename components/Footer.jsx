@@ -14,22 +14,26 @@ function Footer() {
 
         <nav className="lp-footer__cols" aria-label="Footer">
           <div>
-            <div className="lp-footer__col-head">// Practice</div>
-            <a href="#practice">Contract restructuring</a>
-            <a href="#practice">Modular pricing</a>
-            <a href="#practice">Account architecture</a>
-            <a href="#practice">Product governance</a>
+            <div className="lp-footer__col-head">// Services</div>
+            <a href="#services">Custom SaaS architecture</a>
+            <a href="#services">Admin &amp; client portals</a>
+            <a href="#services">Automation &amp; integration</a>
+            <a href="#services">Full-stack delivery</a>
           </div>
           <div>
-            <div className="lp-footer__col-head">// Ventures</div>
+            <div className="lp-footer__col-head">// Work</div>
             <a href="https://podfy.net" target="_blank" rel="noopener noreferrer">Podfy ↗</a>
+            <a href="https://harryvanderplas.com" target="_blank" rel="noopener noreferrer">Harry van der Plas ↗</a>
+            <a href="#work">EMCT</a>
             <a href="https://justfit.cc" target="_blank" rel="noopener noreferrer">JustFit ↗</a>
           </div>
           <div>
             <div className="lp-footer__col-head">// Studio</div>
-            <a href="#resume">Resume</a>
+            <a href="/about">About</a>
             <a href="#contact">Contact</a>
             <a href="mailto:hello@lake-project.com">hello@lake-project.com</a>
+            <a href="/trust">Privacy &amp; legal</a>
+            <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
           </div>
         </nav>
       </div>

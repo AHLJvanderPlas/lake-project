@@ -23,10 +23,9 @@ function Header({ active, onNav }) {
     return () => clearInterval(id);
   }, []);
 
-  const items = [
-    { id: "practice", label: "Practice" },
-    { id: "ventures", label: "Ventures" },
-    { id: "resume",   label: "Resume"   },
+  const scrollItems = [
+    { id: "services", label: "Services" },
+    { id: "work",     label: "Work"     },
     { id: "contact",  label: "Contact"  },
   ];
 
@@ -40,7 +39,7 @@ function Header({ active, onNav }) {
       </a>
 
       <nav className="lp-header__nav" aria-label="Primary">
-        {items.map((it) => (
+        {scrollItems.map((it) => (
           <a
             key={it.id}
             href={`#${it.id}`}
@@ -50,13 +49,16 @@ function Header({ active, onNav }) {
             {it.label}
           </a>
         ))}
+        <a href="/about" className="lp-header__link">
+          About
+        </a>
       </nav>
 
       <div className="lp-header__meta">
         <span className="lp-header__loc">
           <span className="lp-header__dot" />
-          <span>Moerdijk · NL</span>
-          <span className="lp-header__coord">51.6705° N · 4.6111° E</span>
+          <span>Rotterdam · NL</span>
+          <span className="lp-header__coord">51.9225° N · 4.4792° E</span>
           <span className="lp-header__coord">· {time}</span>
         </span>
       </div>

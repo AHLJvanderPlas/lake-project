@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Lake-Project</title>
+<meta name="description" content="Alexander van der Plas — TU Delft engineer, logistics operator, and the person behind Lake-Project. Eight years at DSV across commercial, product, and operations leadership." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lake-project.com/about" />
+<link rel="icon" href="/assets/lake-project-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/colors_and_type.css" />
+<link rel="stylesheet" href="/site.css" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--abyss);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-lh);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--signal); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+::selection { background: var(--signal); color: var(--abyss); }
+
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 900px 600px at 50% -10%, rgba(111,227,209,0.06) 0%, transparent 70%);
+}
+
+.about-wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* ── Topbar ── */
+.about-topbar {
+  display: flex; align-items: center; gap: 20px;
+  padding: 24px 0 20px;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-bottom: 72px;
+}
+.about-topbar__home {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-muted); text-decoration: none;
+  transition: color 160ms;
+}
+.about-topbar__home:hover { color: var(--fg); }
+.about-topbar__logo {
+  display: inline-flex; gap: 4px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.about-topbar__logo span:first-child { color: var(--signal); }
+.about-topbar__logo span:last-child  { color: var(--fg-muted); }
+.about-topbar__sep { flex: 1; height: 1px; background: var(--border-hairline); }
+.about-topbar__back {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-faint); text-decoration: none; transition: color 160ms;
+}
+.about-topbar__back:hover { color: var(--fg-muted); }
+
+/* ── Bio ── */
+.about-bio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  margin-bottom: 80px;
+}
+@media (max-width: 760px) {
+  .about-bio { grid-template-columns: 1fr; gap: 32px; }
+}
+.about-bio__eyebrow {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-faint); margin-bottom: 16px;
+}
+.about-bio__name {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--fg);
+  margin-bottom: 24px;
+}
+.about-bio__lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+}
+.about-bio__facts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px;
+  margin-top: 32px;
+}
+.about-bio__fact dt {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-faint); margin-bottom: 4px;
+}
+.about-bio__fact dd {
+  font-size: 13px; color: var(--fg-subtle);
+}
+.about-bio__aside {
+  padding: 28px;
+  border: 1px solid var(--border-hairline);
+  border-left: 3px solid var(--signal);
+}
+.about-bio__aside-head {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--fg-faint); margin-bottom: 14px;
+}
+.about-bio__aside p {
+  font-size: 13px; line-height: 1.7; color: var(--fg-muted); margin-bottom: 12px;
+}
+.about-bio__aside p:last-child { margin-bottom: 0; }
+
+/* ── LinkedIn CTA ── */
+.about-linkedin {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--signal); border: 1px solid var(--border-hairline); padding: 10px 16px;
+  transition: border-color 160ms, color 160ms; margin-top: 24px;
+}
+.about-linkedin:hover { border-color: var(--signal); color: var(--signal); }
+
+/* ── Footer ── */
+.about-footer {
+  border-top: 1px solid var(--border-hairline);
+  margin-top: 80px; padding: 28px 0 48px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.about-footer__meta {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-faint);
+}
+.about-footer__back {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-muted); text-decoration: none; transition: color 160ms;
+}
+.about-footer__back:hover { color: var(--fg); }
+
+/* Resume component inherits lp-resume classes from site.css */
+#resume-mount .lp-resume { padding-top: 0; border-top: none; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="about-wrap">
+
+  <!-- Topbar -->
+  <header class="about-topbar">
+    <a href="/" class="about-topbar__home">
+      <span class="about-topbar__logo">
+        <span>LAKE</span><span>PROJECT</span>
+      </span>
+    </a>
+    <span class="about-topbar__sep"></span>
+    <a href="/" class="about-topbar__back">← Back to studio</a>
+  </header>
+
+  <!-- Bio -->
+  <section class="about-bio">
+    <div>
+      <div class="about-bio__eyebrow">// The person behind the studio</div>
+      <h1 class="about-bio__name">Alexander<br>van der Plas</h1>
+      <p class="about-bio__lead">
+        TU Delft engineering background. Eight years at DSV across the full width of contract logistics — contract management, key accounts, operational leadership, and freight product design.
+      </p>
+      <p class="about-bio__lead">
+        The same analytical discipline that made the commercial work productive at DSV is what Lake-Project applies to SaaS product development: define the problem precisely before deciding what to build, build something modular, hand it over to operations running.
+      </p>
+
+      <a
+        class="about-linkedin"
+        href="https://www.linkedin.com/in/alexandervanderplas"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ↗ View on LinkedIn
+      </a>
+
+      <dl class="about-bio__facts">
+        <div class="about-bio__fact">
+          <dt>Education</dt>
+          <dd>TU Delft — Engineering</dd>
+        </div>
+        <div class="about-bio__fact">
+          <dt>Based</dt>
+          <dd>Rotterdam, NL</dd>
+        </div>
+        <div class="about-bio__fact">
+          <dt>Languages</dt>
+          <dd>NL · EN · DE</dd>
+        </div>
+        <div class="about-bio__fact">
+          <dt>KvK</dt>
+          <dd>29816688</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="about-bio__aside">
+        <div class="about-bio__aside-head">⌑ On the method</div>
+        <p>
+          Design thinking is the operating model — not as a workshop format, but as a genuine analytical discipline. Every engagement, whether commercial or technical, starts with the same question: what is the actual problem, and what is the simplest thing that solves it correctly?
+        </p>
+        <p>
+          At DSV, that meant modular pricing catalogues and governance frameworks instead of bespoke per-customer setups. At Lake-Project, it means scoped, governed SaaS products instead of all-in-one platforms that nobody can run without the builder in the room.
+        </p>
+        <p>
+          The constraint is the same in both cases: the output has to be handed over to operations and survive without ongoing involvement.
+        </p>
+      </div>
+
+      <div class="about-bio__aside" style="margin-top: 20px; border-left-color: var(--border-hairline);">
+        <div class="about-bio__aside-head">⌑ Contact</div>
+        <p>
+          For project inquiries: <a href="mailto:hello@lake-project.com">hello@lake-project.com</a><br>
+          Or use the <a href="/#contact">contact form</a> on the studio homepage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career -->
+  <div id="resume-mount"></div>
+
+  <!-- Footer -->
+  <footer class="about-footer">
+    <div class="about-footer__meta">
+      <span>Lake-Project · KvK 29816688</span>
+      <span>Rotterdam · NL</span>
+      <span>© 2026</span>
+    </div>
+    <a href="/" class="about-footer__back">← Studio home</a>
+  </footer>
+
+</div>
+
+<script type="text/babel" src="/components/Resume.jsx"></script>
+<script type="text/babel">
+/* global React, ReactDOM, Resume */
+ReactDOM.createRoot(document.getElementById("resume-mount")).render(<Resume />);
+</script>
+
+</body>
+</html>

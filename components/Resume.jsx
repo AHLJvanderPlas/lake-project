@@ -179,9 +179,6 @@ function Resume() {
       </ol>
 
       <div className="lp-resume__cta">
-        <a href="/resume/alexander-van-der-plas-cv.pdf" className="btn btn--ghost" download>
-          Download CV ↓
-        </a>
         <a
           href="https://www.linkedin.com/in/alexandervanderplas"
           className="lp-resume__linkedin"
