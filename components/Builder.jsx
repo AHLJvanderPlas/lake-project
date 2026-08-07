@@ -42,6 +42,16 @@ function Builder() {
       tags: ["Full SaaS stack", "EU archive", "Billing engine"],
       url: "https://podfy.net",
     },
+    {
+      id: "P.05",
+      status: "LIVE",
+      context: "SaaS · skillbank.cc",
+      label: "SkillBank",
+      description:
+        "Multi-tenant competency and examination platform for industrial operators. Structured competence matrices per department, a work-instruction repository with QR machine access, four-eyes approval workflows, and automatic PDF certificate generation. Theory and practical examinations with scoring, sign-off, and LinkedIn-publishable verification links. Cloudflare Workers, D1, and R2 — EU-residenced, per-tenant branded.",
+      tags: ["Competence matrix", "Work instructions", "Certificate generation"],
+      url: "https://skillbank.cc",
+    },
   ];
 
   return (
@@ -55,7 +65,7 @@ function Builder() {
             <span>Work</span>
           </div>
           <h2 className="lp-builder__title">
-            Four products.<br />
+            Five products.<br />
             <em>All in production.</em>
           </h2>
           <p className="lp-builder__lead">
