@@ -52,6 +52,16 @@ function Builder() {
       tags: ["Competence matrix", "Work instructions", "Certificate generation"],
       url: "https://skillbank.cc",
     },
+    {
+      id: "P.06",
+      status: "LIVE",
+      context: "ESG consultancy platform · farlaneconsulting.com",
+      label: "Farlane Consulting",
+      description:
+        "CSRD and ESG reporting platform for a sustainability consultancy. Double materiality assessment scored against ESRS topics using a configurable rubric, with sector-peer benchmarking. A report builder that assembles versioned deliverables from reusable blocks and data points. Client portal on passwordless magic-link access, with shared documents, threaded comments, and notification preferences. Public site, admin back-end, and portal on three subdomains. Cloudflare Workers, D1, and R2, EU-residenced.",
+      tags: ["Double materiality", "Report builder", "Client portal"],
+      url: "https://farlaneconsulting.com",
+    },
   ];
 
   return (
@@ -65,7 +75,7 @@ function Builder() {
             <span>Work</span>
           </div>
           <h2 className="lp-builder__title">
-            Five products.<br />
+            Six products.<br />
             <em>All in production.</em>
           </h2>
           <p className="lp-builder__lead">
