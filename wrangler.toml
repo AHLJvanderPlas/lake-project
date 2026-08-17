@@ -1,0 +1,12 @@
+name = "lake-project"
+compatibility_date = "2025-01-01"
+
+# Only public/ is served. The repo root was the deploy directory until
+# 2026-08-17, which published CLAUDE.md, README.md, HOW_TO_USE.md and SKILL.md
+# at lake-project.com. Anything added outside public/ is private by default.
+# functions/ stays at the repo root and is still resolved from here.
+#
+# No bindings are declared because there are none: functions/api/contact.js uses
+# only TURNSTILE_SECRET and RESEND_API_KEY, which are Pages secrets stored on the
+# project and untouched by this file.
+pages_build_output_dir = "public"
