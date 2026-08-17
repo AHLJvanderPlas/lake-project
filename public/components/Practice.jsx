@@ -5,19 +5,19 @@ function Practice() {
     {
       num: "S.01",
       title: "Custom SaaS architecture",
-      blurb: "Back-end systems scoped to one problem and built to last. Cloudflare Workers, D1, and R2 as the default stack — globally distributed, zero cold-starts, no infrastructure to manage. Modular in design so features can be added without rewriting the foundation.",
+      blurb: "Back-end systems scoped to one problem and built to last. Cloudflare Workers, D1, and R2 as the default stack: globally distributed, zero cold-starts, no infrastructure to manage. Modular in design so features can be added without rewriting the foundation.",
       meta: ["Cloudflare Workers", "D1 · R2 storage", "Modular architecture"],
     },
     {
       num: "S.02",
       title: "Admin & client portals",
-      blurb: "Internal dashboards and client-facing portals built for real operational use — passkey authentication, role-based access, billing, document management, and audit trails. Designed to be handed to operations and run without a developer in the loop.",
+      blurb: "Internal dashboards and client-facing portals built for real operational use: passkey authentication, role-based access, billing, document management, and audit trails. Designed to be handed to operations and run without a developer in the loop.",
       meta: ["Passkey auth", "Billing & invoicing", "Document management"],
     },
     {
       num: "S.03",
       title: "Automation & integration",
-      blurb: "Real-time data scrapers, event-driven middleware, and queue-based processing pipelines. Things that run without being watched — fuel index feeds, newsletter engines, registration middleware, scheduled publishing. Built with Cloudflare Queues and Workers Cron so they survive load spikes and silent failures.",
+      blurb: "Real-time data scrapers, event-driven middleware, and queue-based processing pipelines. Things that run without being watched: fuel index feeds, newsletter engines, registration middleware, scheduled publishing. Built with Cloudflare Queues and Workers Cron so they survive load spikes and silent failures.",
       meta: ["Live scrapers", "Queue consumers", "Event middleware"],
     },
     {
@@ -44,7 +44,7 @@ function Practice() {
           </h2>
         </div>
         <p className="lp-practice__lead">
-          Every engagement starts the same way — define the problem precisely before deciding what to build. The output is always a deployed, running product: not a prototype, not a recommendation deck, and not something that needs a developer in the room to keep it alive.
+          Every engagement starts the same way: define the problem precisely before deciding what to build. The output is always a deployed, running product: not a prototype, not a recommendation deck, and not something that needs a developer in the room to keep it alive.
         </p>
       </header>
 
@@ -77,14 +77,14 @@ function Practice() {
       <aside className="lp-practice__aside">
         <div className="lp-practice__aside-eyebrow t-micro">⌑ The stack</div>
         <p className="lp-practice__aside-text">
-          Cloudflare Workers, D1, R2, and Pages are the default platform — not because they're fashionable, but because they remove the infrastructure layer entirely. <strong>No servers, no containers, no DevOps overhead.</strong> The build is the product; the edge network handles the rest. Every product in the work portfolio runs on this stack.
+          Cloudflare Workers, D1, R2, and Pages are the default platform, not because they're fashionable but because they remove the infrastructure layer entirely. <strong>No servers, no containers, no DevOps overhead.</strong> The build is the product; the edge network handles the rest. Every product in the work portfolio runs on this stack.
         </p>
       </aside>
 
       <aside className="lp-practice__aside lp-practice__aside--builder">
         <div className="lp-practice__aside-eyebrow t-micro">⌑ Scope</div>
         <p className="lp-practice__aside-text">
-          Lake-Project takes on <strong>a small number of builds at a time</strong> — not because of capacity, but because each one deserves the full analytical pass before a line of code is written. If you need a large agency with dedicated project managers and weekly status decks, this isn't the right shop. If you need one studio that can scope, build, and hand over a running product, we should talk.
+          Lake-Project takes on <strong>a small number of builds at a time</strong>, not because of capacity but because each one deserves the full analytical pass before a line of code is written. If you need a large agency with dedicated project managers and weekly status decks, this isn't the right shop. If you need one studio that can scope, build, and hand over a running product, we should talk.
         </p>
       </aside>
     </section>

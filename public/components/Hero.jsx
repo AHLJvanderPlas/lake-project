@@ -21,7 +21,7 @@ function Hero({ onNav }) {
         </h1>
 
         <p className="lp-hero__lead">
-          Lake-Project designs and builds <strong>custom web-based SaaS products</strong> — back-end systems, automation tooling, and full-stack applications. Each build is scoped to one problem, engineered to run without ongoing involvement, and handed over as a working product.
+          Lake-Project designs and builds <strong>custom web-based SaaS products</strong>: back-end systems, automation tooling, and full-stack applications. Each build is scoped to one problem, engineered to run without ongoing involvement, and handed over as a working product.
         </p>
 
         <div className="lp-hero__actions">
@@ -44,7 +44,7 @@ function Hero({ onNav }) {
           </div>
           <div>
             <dt>Products in production</dt>
-            <dd><span className="lp-hero__fact-tick" />4 — and counting</dd>
+            <dd><span className="lp-hero__fact-tick" />4 en groeiend</dd>
           </div>
           <div>
             <dt>Based</dt>

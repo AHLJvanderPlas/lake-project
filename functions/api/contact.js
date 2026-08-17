@@ -32,11 +32,11 @@ export async function onRequestPost({ request, env }) {
   );
   const ts = await tsRes.json();
   if (!ts.success) {
-    return json({ error: "Verification failed — please try again." }, 403);
+    return json({ error: "Verification failed, please try again." }, 403);
   }
 
   const topicLabel = topic || "General";
-  const subject = `Transmission received — Lake-Project`;
+  const subject = `Transmission received · Lake-Project`;
   const textBody = buildText({ name, company, email, note, topicLabel });
   const htmlBody = buildHtml({ name, company, email, note, topicLabel });
 
@@ -60,7 +60,7 @@ export async function onRequestPost({ request, env }) {
   if (!resendRes.ok) {
     const err = await resendRes.text();
     console.error("Resend error:", err);
-    return json({ error: "Failed to send — please email directly." }, 502);
+    return json({ error: "Failed to send, please email directly." }, 502);
   }
 
   return json({ ok: true }, 200);
@@ -73,16 +73,16 @@ export function onRequest() {
 // ── Plain-text fallback ────────────────────────────────────────────────────────
 function buildText({ name, company, email, note, topicLabel }) {
   return [
-    "LAKE PROJECT — Transmission received",
+    "LAKE PROJECT · Transmission received",
     "─────────────────────────────────────",
     "",
     `${name},`,
     "",
-    "Your message has been received. Alexander will reply within two working days — usually from a Dutch evening.",
+    "Your message has been received. Alexander will reply within two working days, usually from a Dutch evening.",
     "",
     "── Your transmission ──────────────────",
     `Name:    ${name}`,
-    `Company: ${company || "—"}`,
+    `Company: ${company || "-"}`,
     `Email:   ${email}`,
     `Topic:   ${topicLabel}`,
     "",
@@ -94,7 +94,7 @@ function buildText({ name, company, email, note, topicLabel }) {
   ].join("\n");
 }
 
-// ── HTML email — Night Station aesthetic ──────────────────────────────────────
+// ── HTML email · Night Station aesthetic ──────────────────────────────────────
 function buildHtml({ name, company, email, note, topicLabel }) {
   const e = esc;
 
@@ -131,7 +131,7 @@ function buildHtml({ name, company, email, note, topicLabel }) {
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Transmission received — Lake-Project</title>
+<title>Transmission received · Lake-Project</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap');
   body,table,td,p,h1,h2{margin:0;padding:0;border:0}
@@ -193,7 +193,7 @@ function buildHtml({ name, company, email, note, topicLabel }) {
           </p>
           <p style="font-family:${sans};font-size:15px;font-weight:300;
                      color:${fgMuted};margin:0 0 36px;line-height:1.6">
-            Your message is in. Alexander will reply within two working days —
+            Your message is in. Alexander will reply within two working days,
             usually from a Dutch evening.
           </p>
 
@@ -215,7 +215,7 @@ function buildHtml({ name, company, email, note, topicLabel }) {
           <!-- Data table -->
           <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
             ${row("Name",    name)}
-            ${row("Company", company || "—")}
+            ${row("Company", company || "-")}
             ${row("Email",   email)}
             ${row("Topic",   topicLabel)}
           </table>

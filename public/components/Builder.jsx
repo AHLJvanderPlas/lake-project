@@ -8,7 +8,7 @@ function Builder() {
       context: "Internal · lake-project.com",
       label: "Financial back-end",
       description:
-        "The studio's own infrastructure. Client portal with passkey authentication, invoice administration and PDF generation, billing engine, and document storage. Built on D1, R2, and Workers — the same stack offered to clients. The back-office for Lake-Project's client engagements.",
+        "The studio's own infrastructure. Client portal with passkey authentication, invoice administration and PDF generation, billing engine, and document storage. Built on D1, R2, and Workers, the same stack offered to clients. The back-office for Lake-Project's client engagements.",
       tags: ["Client portal", "Billing engine", "Passkey auth"],
       url: null,
     },
@@ -18,7 +18,7 @@ function Builder() {
       context: "3PL operations platform",
       label: "EMCT",
       description:
-        "Purpose-built for 3PL operations. Automated fuel cost indexation with live scraper feeds from carrier rate publications — no manual entry, no lag. Event registration middleware for operational workflows. Newsletter delivery optimisation engine. High-frequency, zero-human-in-the-loop data flow from source to output.",
+        "Purpose-built for 3PL operations. Automated fuel cost indexation with live scraper feeds from carrier rate publications: no manual entry, no lag. Event registration middleware for operational workflows. Newsletter delivery optimisation engine. High-frequency, zero-human-in-the-loop data flow from source to output.",
       tags: ["Live fuel scrapers", "Event middleware", "Newsletter engine"],
       url: null,
     },
@@ -38,7 +38,7 @@ function Builder() {
       context: "SaaS · podfy.net",
       label: "Podfy",
       description:
-        "Full SaaS stack: marketing site, driver web-app, customer portal, admin back-end, and billing engine. Proof of delivery for Benelux carriers — send a driver a link, they photograph the CMR, you get a GPS-tagged EU-archived record in 11 seconds. Zero app install, zero onboarding, priced per upload.",
+        "Full SaaS stack: marketing site, driver web-app, customer portal, admin back-end, and billing engine. Proof of delivery for Benelux carriers: send a driver a link, they photograph the CMR, you get a GPS-tagged EU-archived record in 11 seconds. Zero app install, zero onboarding, priced per upload.",
       tags: ["Full SaaS stack", "EU archive", "Billing engine"],
       url: "https://podfy.net",
     },
@@ -48,7 +48,7 @@ function Builder() {
       context: "SaaS · skillbank.cc",
       label: "SkillBank",
       description:
-        "Multi-tenant competency and examination platform for industrial operators. Structured competence matrices per department, a work-instruction repository with QR machine access, four-eyes approval workflows, and automatic PDF certificate generation. Theory and practical examinations with scoring, sign-off, and LinkedIn-publishable verification links. Cloudflare Workers, D1, and R2 — EU-residenced, per-tenant branded.",
+        "Multi-tenant competency and examination platform for industrial operators. Structured competence matrices per department, a work-instruction repository with QR machine access, four-eyes approval workflows, and automatic PDF certificate generation. Theory and practical examinations with scoring, sign-off, and LinkedIn-publishable verification links. Cloudflare Workers, D1, and R2, EU-residenced and per-tenant branded.",
       tags: ["Competence matrix", "Work instructions", "Certificate generation"],
       url: "https://skillbank.cc",
     },
@@ -79,7 +79,7 @@ function Builder() {
             <em>All in production.</em>
           </h2>
           <p className="lp-builder__lead">
-            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system — not a prototype, not a pilot. Same method, same stack, different domain.
+            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system, not a prototype and not a pilot. Same method, same stack, different domain.
           </p>
         </header>
 
@@ -120,7 +120,7 @@ function Builder() {
           <div style={{ marginTop: "10px", display: "flex", alignItems: "baseline", gap: "16px", flexWrap: "wrap" }}>
             <span style={{ fontSize: "13px", color: "var(--fg-muted)" }}>
               <strong style={{ color: "var(--fg)", fontWeight: 500 }}>JustFit</strong>
-              {" "}— AI fitness coaching app. Adaptive workout generation for general fitness, running, cycling, and military prep.{" "}
+              {" "}· AI fitness coaching app. Adaptive workout generation for general fitness, running, cycling, and military prep.{" "}
               <a href="https://justfit.cc" target="_blank" rel="noopener noreferrer" style={{ color: "var(--fg-subtle)" }}>justfit.cc ↗</a>
               {" "}<span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--fg-faint)", letterSpacing: "0.1em" }}>· development paused</span>
             </span>

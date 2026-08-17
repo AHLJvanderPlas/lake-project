@@ -7,7 +7,7 @@ function Ventures() {
       name: "Podfy",
       domain: "podfy.net",
       year: "2024",
-      headline: "Proof of delivery — without the app.",
+      headline: "Proof of delivery, without the app.",
       blurb: "Send a driver a link. They photograph the CMR. You get a stamped, GPS-tagged, EU-archived record back in seconds. No app, no account, no training. Built for Dutch and Benelux carriers and 3PLs.",
       stats: [
         ["Median upload",  "11 s"],
@@ -23,7 +23,7 @@ function Ventures() {
       domain: "justfit.cc",
       year: "2024",
       headline: "Adaptive training coach. Geen excuses.",
-      blurb: "JustFit adapts to you — not the other way around. Bad sleep, twenty-five minutes, sore knee? The AI generates a workout that fits. Free general-fitness path, Pro for running and cycling, military-test prep always free.",
+      blurb: "JustFit adapts to you, not the other way around. Bad sleep, twenty-five minutes, sore knee? The AI generates a workout that fits. Free general-fitness path, Pro for running and cycling, military-test prep always free.",
       stats: [
         ["Training paths",  "4"],
         ["Personalisation", "100%"],
@@ -50,7 +50,7 @@ function Ventures() {
           </h2>
         </div>
         <p className="lp-ventures__lead">
-          Two software products built outside of DSV — same design-thinking method, same modular discipline, different domain. Podfy and JustFit aren't side projects. They're what happens when you apply an engineer's analytical rigour and a designer's approach to problems you care about solving.
+          Two software products built outside of DSV: same design-thinking method, same modular discipline, different domain. Podfy and JustFit aren't side projects. They're what happens when you apply an engineer's analytical rigour and a designer's approach to problems you care about solving.
         </p>
       </header>
 

@@ -71,7 +71,7 @@ function Contact() {
         setStatus("sent");
       }
     } catch {
-      setErrorMsg("Network error — please email directly.");
+      setErrorMsg("Network error, please email directly.");
       setStatus("error");
       resetTurnstile();
     }
@@ -107,7 +107,7 @@ function Contact() {
             <em>no slide deck.</em>
           </h2>
           <p className="lp-contact__lead">
-            The best first step is a thirty-minute call. Tell me what the situation looks like — I'll tell you whether it's the kind of thing the studio is useful for. If it isn't, I'll usually know who is.
+            The best first step is a thirty-minute call. Tell me what the situation looks like, and I'll tell you whether it's the kind of thing the studio is useful for. If it isn't, I'll usually know who is.
           </p>
 
           <dl className="lp-contact__direct">
@@ -141,7 +141,7 @@ function Contact() {
               <div className="lp-contact__form-prompt">Transmission acknowledged</div>
               <h3 className="lp-contact__sent-title">Received.</h3>
               <p className="lp-contact__sent-text">
-                I'll reply within two working days — usually from a Dutch evening. If it's urgent, say so in any follow-up.
+                I'll reply within two working days, usually from a Dutch evening. If it's urgent, say so in any follow-up.
               </p>
               <button className="btn btn--ghost" onClick={reset}>
                 Send another →

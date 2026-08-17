@@ -9,14 +9,14 @@ function Resume() {
       id: "fom",
       idLabel: "R.01",
       title: "Freight Operations Manager",
-      company: "DSV — Global Transport & Logistics",
+      company: "DSV · Global Transport & Logistics",
       type: "Full-time",
-      dates: "Jan 2025 — Present",
+      dates: "Jan 2025 – Present",
       duration: "1 yr 5 mos",
       location: "Moerdijk, North Brabant, NL · On-site",
       range: { from: 0.66, to: 1.00 },
       summary:
-        "Operational leadership of DSV's regional freight business. Carrying forward the modular product portfolio defined in the Contract Manager role into day-to-day execution — product governance, carrier performance, commercial discipline.",
+        "Operational leadership of DSV's regional freight business. Carrying forward the modular product portfolio defined in the Contract Manager role into day-to-day execution: product governance, carrier performance, commercial discipline.",
       bullets: [
         "Operational accountability for regional freight flows: carrier mix, service KPIs, and escalations.",
         "Embedding the modular pricing catalogue across new customer wins and renewals.",
@@ -27,20 +27,20 @@ function Resume() {
       id: "kam",
       idLabel: "R.02",
       title: "Key Account Manager",
-      company: "DSV — Global Transport & Logistics",
+      company: "DSV · Global Transport & Logistics",
       type: "Full-time",
-      dates: "Jan 2023 — Feb 2025",
+      dates: "Jan 2023 – Feb 2025",
       duration: "2 yrs 2 mos",
       location: "Moerdijk, North Brabant, NL · On-site",
       range: { from: 0.22, to: 0.70 },
       summary:
-        "Full commercial ownership of DSV's strategic regional customer portfolio. Single point of accountability for the customer relationship, the contract, the commercial structure, and the operational outcome — closest equivalent to a P&L owner inside the regional commercial organisation.",
+        "Full commercial ownership of DSV's strategic regional customer portfolio. Single point of accountability for the customer relationship, the contract, the commercial structure, and the operational outcome: the closest equivalent to a P&L owner inside the regional commercial organisation.",
       bullets: [
         "Portfolio ownership. Owned the commercial relationship and contracted scope for the region's strategic accounts, including the largest by revenue. Single decision-maker on pricing, scope, renewals, and escalations.",
-        "Repositioned customer relationships from transactional to strategic. Restructured engagement with the largest accounts around their long-term business agenda — sustainability, network resilience, cost-to-serve — turning annual renegotiations into multi-year partnerships.",
+        "Repositioned customer relationships from transactional to strategic. Restructured engagement with the largest accounts around their long-term business agenda: sustainability, network resilience, cost-to-serve, turning annual renegotiations into multi-year partnerships.",
         "Creative commercial structuring as a competitive weapon. Designed and won contract structures (gain-share, tiered service, value-based pricing) that solved customer problems competitors couldn't price for, expanding scope and protecting margin simultaneously.",
         "Led innovation as a commercial lever, not a cost. Made the call to bring sustainability and technology investments to the commercial table as differentiators, converting them into incremental scope and customer commitment.",
-        "Influence across the enterprise. Mobilised operations, finance, IT, and senior leadership — none reporting to the role — to deliver against commercial commitments to strategic customers.",
+        "Influence across the enterprise. Mobilised operations, finance, IT, and senior leadership, none of it reporting to the role, to deliver against commercial commitments to strategic customers.",
         "Trusted counterpart at customer C-suite and procurement leadership level, navigating decisions that determined multi-year contract direction.",
       ],
     },
@@ -48,16 +48,16 @@ function Resume() {
       id: "cm",
       idLabel: "R.03",
       title: "Contract Manager",
-      company: "DSV — Global Transport & Logistics",
+      company: "DSV · Global Transport & Logistics",
       type: "Full-time",
-      dates: "May 2022 — Jul 2023",
+      dates: "May 2022 – Jul 2023",
       duration: "1 yr 3 mos",
       location: "Tholen, Zeeland, NL · On-site",
       range: { from: 0.00, to: 0.30 },
       summary:
-        "Commercial and product accountability for DSV Contract Logistics' distribution proposition. Multi-site portfolio — 60,000 m², 150 FTE, SQAS- and PharmaQMS-certified — serving high-value pharmaceutical and chemical customers.",
+        "Commercial and product accountability for DSV Contract Logistics' distribution proposition. Multi-site portfolio of 60,000 m², 150 FTE, SQAS- and PharmaQMS-certified, serving high-value pharmaceutical and chemical customers.",
       bullets: [
-        "Took the decision to move freight from bespoke per-customer setups and cost-plus pricing toward a modular product catalogue priced on delivered value — a structural change in how the business goes to market in the segment.",
+        "Took the decision to move freight from bespoke per-customer setups and cost-plus pricing toward a modular product catalogue priced on delivered value, a structural change in how the business goes to market in the segment.",
         "Established the governance framework, catalogue definition, change control, pricing discipline, and service KPIs that allow freight propositions to scale across the customer base without eroding margin or service consistency.",
         "Personally led solution design conversations with customer leadership, translating network, service, and sustainability ambitions into commercially defensible distribution architectures.",
         "Drove a 15% efficiency improvement and a material reduction in compliance issues across the regulated pharma + chemical portfolio.",
@@ -82,7 +82,7 @@ function Resume() {
           <em>three different jobs.</em>
         </h2>
         <p className="lp-resume__lead">
-          TU Delft engineering background. Eight years at DSV across the full operational and commercial width — contract management, key accounts, pharma and chemical operations, freight product design, and current freight operations leadership. Design thinking applied throughout: every role produced something modular, governed, and handed over to operations.
+          TU Delft engineering background. Eight years at DSV across the full operational and commercial width: contract management, key accounts, pharma and chemical operations, freight product design, and current freight operations leadership. Design thinking applied throughout: every role produced something modular, governed, and handed over to operations.
         </p>
 
         <div className="lp-resume__meta">
@@ -108,7 +108,7 @@ function Resume() {
       <div className="lp-resume__timeline">
         <div className="lp-resume__timeline-label">
           <span>// Tenure ribbon · click a block to expand the role</span>
-          <span>2022 — 2026</span>
+          <span>2022 – 2026</span>
         </div>
         <div className="lp-resume__timeline-bar">
           {roles.map((r) => {
