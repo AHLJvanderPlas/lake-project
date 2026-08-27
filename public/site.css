@@ -693,6 +693,41 @@ main, header, footer { position: relative; z-index: 1; }
   border-radius: var(--radius-sm);
 }
 
+/* Status marker on a work card: LIVE dot, or WIP stamp */
+.lp-builder__card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.lp-builder__card-status--live {
+  color: var(--status-positive);
+}
+.lp-builder__card-status--wip {
+  color: var(--status-warning);
+  border: 1px solid var(--status-warning);
+  background: rgba(255, 168, 107, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  letter-spacing: 0.2em;
+  transform: rotate(-2deg);
+}
+.lp-builder__card--wip::after {
+  background: var(--status-warning);
+  box-shadow: 0 0 8px var(--status-warning);
+}
+.lp-builder__card--wip:hover {
+  border-color: var(--status-warning);
+  box-shadow: var(--shadow-2);
+}
+.lp-builder__card-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
 /* ── Ventures ────────────────────────────────────────────── */
 .lp-ventures {
   background: var(--bg-canvas);

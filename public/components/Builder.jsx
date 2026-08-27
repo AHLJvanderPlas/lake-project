@@ -62,6 +62,26 @@ function Builder() {
       tags: ["Double materiality", "Report builder", "Client portal"],
       url: "https://farlaneconsulting.com",
     },
+    {
+      id: "P.07",
+      status: "WIP",
+      context: "AI fitness coach · justfit.cc",
+      label: "JustFit",
+      description:
+        "Adaptive AI training coach. Bad night's sleep, twenty-five minutes, a sore knee: the generator builds the workout that actually fits the day instead of the one on the schedule. Four paths (general fitness, running, cycling, and military-test prep) plus a trainer portal with billing for coaches and gyms. Live and in daily use, but carried forward as a personal project rather than a commercial product.",
+      tags: ["Adaptive workouts", "Four training paths", "Trainer portal"],
+      url: "https://justfit.cc",
+    },
+    {
+      id: "P.08",
+      status: "WIP",
+      context: "Customisable widgets · alexandervanderplas.com",
+      label: "Widgets",
+      description:
+        "A growing set of self-contained, customisable widgets. Each one is a single standalone page: pin it to a phone home screen and it runs as a mobile web-app, or drop the same URL into a Homey dashboard as a Webframe tile. Flip clock, agenda, birthdays, hourly weather, and Stookwijzer advice, theme-aware and configured entirely through the URL. No app, no account, no build step.",
+      tags: ["Homey dashboard", "Mobile web-app", "Theme-aware"],
+      url: "https://alexandervanderplas.com/widgets/",
+    },
   ];
 
   return (
@@ -75,56 +95,50 @@ function Builder() {
             <span>Work</span>
           </div>
           <h2 className="lp-builder__title">
-            Six products.<br />
-            <em>All in production.</em>
+            Eight products.<br />
+            <em>Six in production.</em>
           </h2>
           <p className="lp-builder__lead">
-            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system, not a prototype and not a pilot. Same method, same stack, different domain.
+            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system, not a prototype and not a pilot. Same method, same stack, different domain. Two are marked WIP: they are live and usable, but continue as personal projects rather than commercial products.
           </p>
         </header>
 
         <div className="lp-builder__grid">
-          {products.map((p) => (
-            <article key={p.id} className="lp-builder__card" data-id={p.id}>
-              <div className="lp-builder__card-meta">
-                <span className="lp-venture__live" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginRight: "10px" }}>
-                  <span className="lp-venture__live-dot" />
-                  {p.status}
-                </span>
-                <span className="lp-builder__card-context">{p.context}</span>
-              </div>
-              <h3 className="lp-builder__card-label">{p.label}</h3>
-              <p className="lp-builder__card-desc">{p.description}</p>
-              <ul className="lp-builder__card-tags">
-                {p.tags.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-              {p.url && (
-                <a
-                  className="lp-venture__visit"
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "16px" }}
-                >
-                  Visit ↗
-                </a>
-              )}
-            </article>
-          ))}
-        </div>
-
-        <div style={{ marginTop: "48px", padding: "20px 24px", border: "1px solid var(--border-hairline)", borderRadius: "4px" }}>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fg-faint)" }}>// Also built</span>
-          <div style={{ marginTop: "10px", display: "flex", alignItems: "baseline", gap: "16px", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "13px", color: "var(--fg-muted)" }}>
-              <strong style={{ color: "var(--fg)", fontWeight: 500 }}>JustFit</strong>
-              {" "}· AI fitness coaching app. Adaptive workout generation for general fitness, running, cycling, and military prep.{" "}
-              <a href="https://justfit.cc" target="_blank" rel="noopener noreferrer" style={{ color: "var(--fg-subtle)" }}>justfit.cc ↗</a>
-              {" "}<span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--fg-faint)", letterSpacing: "0.1em" }}>· development paused</span>
-            </span>
-          </div>
+          {products.map((p) => {
+            const wip = p.status === "WIP";
+            return (
+              <article
+                key={p.id}
+                className={wip ? "lp-builder__card lp-builder__card--wip" : "lp-builder__card"}
+                data-id={p.id}
+              >
+                <div className="lp-builder__card-meta">
+                  <span className={wip ? "lp-builder__card-status lp-builder__card-status--wip" : "lp-builder__card-status lp-builder__card-status--live"}>
+                    {!wip && <span className="lp-venture__live-dot" />}
+                    {p.status}
+                  </span>
+                  <span className="lp-builder__card-context">{p.context}</span>
+                </div>
+                <h3 className="lp-builder__card-label">{p.label}</h3>
+                <p className="lp-builder__card-desc">{p.description}</p>
+                <ul className="lp-builder__card-tags">
+                  {p.tags.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+                {p.url && (
+                  <a
+                    className="lp-venture__visit lp-builder__card-visit"
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit ↗
+                  </a>
+                )}
+              </article>
+            );
+          })}
         </div>
 
       </div>
