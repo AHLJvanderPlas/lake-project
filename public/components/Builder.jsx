@@ -58,7 +58,7 @@ function Builder() {
       context: "ESG consultancy platform · farlaneconsulting.com",
       label: "Farlane Consulting",
       description:
-        "CSRD and ESG reporting platform for a sustainability consultancy. Double materiality assessment scored against ESRS topics using a configurable rubric, with sector-peer benchmarking. A report builder that assembles versioned deliverables from reusable blocks and data points. Client portal on passwordless magic-link access, with shared documents, threaded comments, and notification preferences. Public site, admin back-end, and portal on three subdomains. Cloudflare Workers, D1, and R2, EU-residenced.",
+        "CSRD and ESG reporting platform for a sustainability consultancy. Double materiality assessment scored against ESRS topics using a configurable rubric, with sector-peer benchmarking. A report builder that assembles versioned deliverables from reusable blocks and data points. Client portal on passwordless magic-link access, with shared documents, threaded comments, and notification preferences. Public site, admin back-end, and portal on three subdomains. Cloudflare Workers, D1, and R2, EU-residenced. The public site is password-gated until go-live: access can be shared on request.",
       tags: ["Double materiality", "Report builder", "Client portal"],
       url: "https://farlaneconsulting.com",
     },
