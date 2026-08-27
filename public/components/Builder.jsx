@@ -74,7 +74,7 @@ function Builder() {
     },
     {
       id: "P.08",
-      status: "WIP",
+      status: "LIVE",
       context: "Customisable widgets · alexandervanderplas.com",
       label: "Widgets",
       description:
@@ -96,10 +96,10 @@ function Builder() {
           </div>
           <h2 className="lp-builder__title">
             Eight products.<br />
-            <em>Six in production.</em>
+            <em>Seven in production.</em>
           </h2>
           <p className="lp-builder__lead">
-            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system, not a prototype and not a pilot. Same method, same stack, different domain. Two are marked WIP: they are live and usable, but continue as personal projects rather than commercial products.
+            Every build in this portfolio started as a precise problem definition. The output in each case is a deployed, running system, not a prototype and not a pilot. Same method, same stack, different domain. One is marked WIP: JustFit is live and usable, but continues as a personal project rather than a commercial product.
           </p>
         </header>
 
